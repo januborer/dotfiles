@@ -4,6 +4,10 @@ if [ ! -d "$HOME/.config/nvim/plugged" ]; then
        	mkdir -p $HOME/.config/nvim/plugged
 fi
 
+if [ ! -d "$HOME/.config/spotify-tui" ]; then
+       	mkdir -p $HOME/.config/spotify-tui
+fi
+
 if [ ! -d "$HOME/.config/nvim/autoload" ]; then
        	mkdir -p $HOME/.config/nvim/autoload
 fi
@@ -55,3 +59,6 @@ ln -sr ./swayconfigs/waybarconfigs/config $HOME/.config/waybar/config
 ln -sr ./swayconfigs/waybarconfigs/style.css $HOME/.config/waybar/style.css
 
 ln -sr ./.alacritty.yml $HOME/.alacritty.yml
+
+######spotify-tui#######
+ln -sr ./spotify_configs/client.yml $HOME/.config/spotify-tui/client.yml
