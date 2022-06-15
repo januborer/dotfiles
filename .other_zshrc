@@ -94,16 +94,16 @@ fi
 # exec nohup fcitx5 &
 ###############sway##############
 ##export WAYLAND_DISPLAY=alacritty
-if [ "$(tty)" = "/dev/tty1" ] && [ "$USER" = "borer" ]; then
-   exec sway
-   #exec startxfce4
-   exit 0
-fi
+# if [ "$(tty)" = "/dev/tty1" ] && [ "$USER" = "borer" ]; then
+   # exec sway
+   # #exec startxfce4
+   # exit 0
+# fi
 
 ##############xfce##############
-if [ "$(tty)" = "/dev/tty2" ] && [ "$USER" = "borer" ]; then
-   export QT_QPA_PLATFORM=xcb
-   exec startxfce4
-   exit 0
-fi
+# if [ "$(tty)" = "/dev/tty2" ] && [ "$USER" = "borer" ]; then
+   # export QT_QPA_PLATFORM=xcb
+   # exec startxfce4
+   # exit 0
+# fi
 
