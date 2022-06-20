@@ -7,31 +7,31 @@
 # export XKB_DEFAULT_VARIANT=latin9
 # export XKB_DEFAULT_MODEL=pc105
 # export QT_QPA_PLATFORM=xcb
-export QT_QPA_PLATFORM=wayland
+#export QT_QPA_PLATFORM=wayland
 # export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
-WAYLAND_DISPLAY=wayland-1
+#WAYLAND_DISPLAY=wayland-1
 #export ELM_DISPLAY=wl
 # export ECORE_EVAS_ENGINE=wayland_shm
-export MOZ_ENABLE_WAYLAND=1
+#export MOZ_ENABLE_WAYLAND=1
 # export QT_QPA_PLATFORMTHEME=qt5ct
 # export AMD_DEBUG=nodma,nongg
 # export RADV_DEBUG=nongg
 # export RADV_PERFTEST=aco
 #export AMD_DEBUG=nodcc
-export BROWSER=firefox
+# export BROWSER=firefox
 #
 # Set the GOPROXY environment variable
-export GOPROXY=https://goproxy.io,direct
+# export GOPROXY=https://goproxy.io,direct
 # Set environment variable allow bypassing the proxy for specified repos (optional)
-export GOPRIVATE=git.mycompany.com,github.com/my/private
+# export GOPRIVATE=git.mycompany.com,github.com/my/private
 #
 #####fcitx######
-export GTK_IM_MODULE=fcitx5
-export QT_IM_MODULE=fcitx5
-export XMODIFIERS="@im=fcitx5"
-export GTK_IM_MODULE DEFAULT=fcitx5
-export QT_IM_MODULE DEFAULT=fcitx5
-export XMODIFIERS DEFAULT=@im=fcitx5
+# export GTK_IM_MODULE=fcitx5
+# export QT_IM_MODULE=fcitx5
+# export XMODIFIERS="@im=fcitx5"
+# export GTK_IM_MODULE DEFAULT=fcitx5
+# export QT_IM_MODULE DEFAULT=fcitx5
+# export XMODIFIERS DEFAULT=@im=fcitx5
 #####################################
 
 [[ $(command -v neofetch) ]] && neofetch
@@ -48,7 +48,7 @@ alias tnew="tmux new -s"
 alias tto="tmux attach -t"
 alias vim="nvim"
 alias man="vimman"
-alias ls="lsd"
+alias ls="exa"
 # alias yay="trizen"
 # alias trans="trans :zh"
 alias my-practices="cd $HOME/my-practices"
@@ -72,10 +72,11 @@ alias es="nohup evince $HOME/Desktop/es6.pdf &"
 
 ######### some configs #########
 
-eval "$(navi widget zsh)"
+# eval "$(navi widget zsh)"
+eval "$(starship init zsh)"
 # "ant""anxiouscat""bat""bat2""behindcat""bigcat""buffalo""cat""chicken""chuck""clippy""cow""daemon""duck""duckling""egret""endlesshorse""facecat""fish""frog" "ghost""grumpycat""hypnotoad""longcat""longtailcat""monkey""mushroom""owl""pig""poop""pumpkin""rabbit""shark""shortcat""signbunny""smallcat""snowman""spider""squirrel""squirrel2""stretchycat""trilobite""turkey""yoda""tux"
 # cowsay -f cat $(whatis $(ls /usr/share/man/man1 |  shuf -n 1 | cut -d. -f1) 2>/dev/null)
-cowsay -f tux $(whatis $(ls /usr/share/man/man1 |  shuf -n 1 | cut -d. -f1) 2>/dev/null)
+# cowsay -f tux $(whatis $(ls /usr/share/man/man1 |  shuf -n 1 | cut -d. -f1) 2>/dev/null)
 #################################
 # ntpdate cn.pool.ntp.org
 # sudo hwclock -w
