@@ -95,11 +95,12 @@ fi
 # exec nohup fcitx5 &
 ###############sway##############
 ##export WAYLAND_DISPLAY=alacritty
-# if [ "$(tty)" = "/dev/tty1" ] && [ "$USER" = "borer" ]; then
+if [ "$(tty)" = "/dev/tty1" ] && [ "$USER" = "borer" ]; then
    # exec sway
-   # #exec startxfce4
-   # exit 0
-# fi
+   #exec startxfce4
+   exec slwm
+   exit 0
+fi
 
 ##############xfce##############
 # if [ "$(tty)" = "/dev/tty2" ] && [ "$USER" = "borer" ]; then
@@ -107,4 +108,3 @@ fi
    # exec startxfce4
    # exit 0
 # fi
-
