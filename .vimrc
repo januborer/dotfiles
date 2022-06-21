@@ -61,6 +61,7 @@ Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
 call plug#end()
 
+" let g:loaded_python3_provider=0
 source $HOME/.config/nvim/.custom_vimrc
 source $HOME/.config/nvim/.plug_vimrc
 source $HOME/.config/nvim/.other_vimrc

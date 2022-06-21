@@ -11,9 +11,6 @@ endif
 
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
-" tab设置为4个空格
-set tabstop=4
-
 "vim教程
 "ctrl+v：选择块shift+i进入输入模式然后在第一行操作完成进入normal模式后其他选中内容将执行同样操作
 "ctrl+y：背景向上移动

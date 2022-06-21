@@ -45,6 +45,20 @@ ln -sr ./.profile $HOME/.profile
 ln -sr ./shell_bins/vimman.sh $HOME/bin/vimman
 ln -sr ./shell_bins/evince-open.sh $HOME/bin/evince-open
 
+#####leftwm####
+
+if [ ! -d "$HOME/.config/leftwm" ]; then
+	mkdir -p $HOME/.config/leftwm
+fi
+
+if [ ! -d "$HOME/.config/leftwm/themes" ]; then
+	mkdir -p $HOME/.config/leftwm/themes
+fi
+ln -sr ./leftwm/config.toml $HOME/.config/leftwm/config.toml
+ln -sr ./leftwm/themes.toml $HOME/.config/leftwm/themes.toml
+
+#############################################################
+
 #####sway######
 if [ ! -d "$HOME/.config/sway" ]; then
 	mkdir $HOME/.config/sway
@@ -60,5 +74,8 @@ ln -sr ./swayconfigs/waybarconfigs/style.css $HOME/.config/waybar/style.css
 
 ln -sr ./.alacritty.yml $HOME/.alacritty.yml
 
+#############################################################
+
 ######spotify-tui#######
 ln -sr ./spotify_configs/client.yml $HOME/.config/spotify-tui/client.yml
+#############################################################
