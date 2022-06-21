@@ -3,12 +3,16 @@ mousekey = "Mod1"
 workspaces = []
 tags = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 layouts = ["MainAndVertStack", "MainAndHorizontalStack", "MainAndDeck", "GridHorizontal", "EvenHorizontal", "EvenVertical", "Fibonacci", "LeftMain", "CenterMain", "CenterMainBalanced", "CenterMainFluid", "Monocle", "RightWiderLeftStack", "LeftWiderRightStack"]
+# Tag,Workspace
 layout_mode = "Workspace"
 insert_behavior = "Bottom"
-scratchpad = []
+scratchpad = [
+    { name = "Htop", value = "htop", x = 860, y = 390, height = 300, width = 200 },
+]
 window_rules = []
-disable_current_tag_swap = false
+disable_current_tag_swap = true
 disable_tile_drag = false
+# Sloppy,ClickTo,Driven
 focus_behaviour = "Sloppy"
 focus_new_windows = true
 # max_window_width = 0.9
@@ -18,6 +22,21 @@ focus_new_windows = true
 # y=0
 # height=600
 # width=1000
+# workspaces = [
+    # { y = 0, x = 0, height = 1440, width = 1720 },
+    # { y = 0, x = 1720, height = 1440, width = 1720 },
+# ]
+
+# [[scratchpad]]
+# name = "htop" # This is the name which is referenced when calling (case-sensitive)
+# value = "htop" # The command to load the application if it isn't started
+# # value = "WINIT_X11_SCALE_FACTOR=1 htop" #with float values
+# # x, y, width, height are in pixels when an integer is inputted or a percentage when a float is inputted.
+# # These values are relative to the size of the workspace, and will be restricted depending on the workspace size.
+# x = 860
+# y = 390
+# height = 300
+# width = 200
 
 [[keybind]]
 command = "Execute"
@@ -42,6 +61,11 @@ command = "SoftReload"
 value = ""
 modifier = ["modkey", "Shift"]
 key = "r"
+# [[keybind]]
+# command = "HardReload"
+# value = ""
+# modifier = ["modkey", "Shift"]
+# key = "r"
 
 [[keybind]]
 command = "Execute"
@@ -83,7 +107,7 @@ key = "j"
 command = "MoveWindowTop"
 value = ""
 modifier = ["modkey","Shift"]
-key = "Space"
+key = "Return"
 
 [[keybind]]
 command = "FocusWindowUp"
@@ -108,6 +132,12 @@ command = "PreviousLayout"
 value = ""
 modifier = ["modkey", "Control"]
 key = "j"
+
+[[keybind]]
+command = "SetLayout"
+value = "Monocle"
+modifier = ["modkey","Control"]
+key = "m"
 
 [[keybind]]
 command = "FocusWorkspaceNext"
@@ -276,3 +306,34 @@ command = "MoveToTag"
 value = "9"
 modifier = ["modkey", "Shift"]
 key = "9"
+
+# [[keybind]]
+# command = "ToggleScratchPad"
+# value = ""
+# modifier = ["modkey"]
+# key = "-"
+
+[[keybind]]
+command = "MoveWindowToPreviousWorkspace"
+modifier = ["modkey", "Shift"]
+key = "Left"
+
+# [[keybind]]
+# command = "FloatingToTile"
+# modifier = ["modkey","Shift"]
+# key = "t"
+
+[[keybind]]
+command = "TileToFloating"
+modifier = ["modkey", "Shift"]
+key = "f"
+
+[[keybind]]
+command = "ToggleFloating"
+modifier = ["modkey", "Control"]
+key = "f"
+
+[[keybind]]
+command = "ToggleFullScreen"
+modifier = ["modkey"]
+key = "f"
