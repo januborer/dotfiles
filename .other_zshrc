@@ -87,12 +87,19 @@ fi
 if [ -f /usr/share/fzf/key-bindings.zsh ]; then
     source /usr/share/fzf/key-bindings.zsh
 fi
+
+
+##################change some############
 # 交换ctrl和caps
 #/usr/bin/setxkbmap -option "ctrl:swapcaps"
 # setxkbmap -option "ctrl:swapcaps"
 # 还原所有键设置
 # /usr/bin/setxkbmap -option ""
 # exec nohup fcitx5 &
+xinput set-prop 10 272 1
+xinput set-prop 10 288 1
+
+
 ###############sway##############
 ##export WAYLAND_DISPLAY=alacritty
 if [ "$(tty)" = "/dev/tty1" ] && [ "$USER" = "borer" ]; then

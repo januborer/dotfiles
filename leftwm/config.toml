@@ -38,6 +38,9 @@ focus_new_windows = true
 # height = 300
 # width = 200
 
+#######Keybind########
+
+###Execute
 [[keybind]]
 command = "Execute"
 value = "rofi -show combi -combi-modi window,run,ssh -modi combi"
@@ -50,6 +53,25 @@ value = "xfce4-terminal"
 modifier = ["modkey"]
 key = "Return"
 
+[[keybind]]
+command = "Execute"
+value = "flameshot gui"
+modifier = ["Mod4"]
+key = "x"
+
+[[keybind]]
+command = "Execute"
+value = "loginctl kill-session $XDG_SESSION_ID"
+modifier = ["modkey", "Shift"]
+key = "x"
+
+[[keybind]]
+command = "Execute"
+value = "slock"
+modifier = ["modkey", "Control"]
+key = "l"
+
+###leftwm shortkey
 [[keybind]]
 command = "CloseWindow"
 value = ""
@@ -67,17 +89,6 @@ key = "r"
 # modifier = ["modkey", "Shift"]
 # key = "r"
 
-[[keybind]]
-command = "Execute"
-value = "loginctl kill-session $XDG_SESSION_ID"
-modifier = ["modkey", "Shift"]
-key = "x"
-
-[[keybind]]
-command = "Execute"
-value = "slock"
-modifier = ["modkey", "Control"]
-key = "l"
 
 [[keybind]]
 command = "MoveToLastWorkspace"
