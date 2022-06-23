@@ -37,10 +37,10 @@ set list
 " 设置背景色
 set background=dark
 " set background=light
-" tab设置为4个空格
-set tabstop=4
+" tab设置为2个空格
+set tabstop=2
 " 设置格式化时制表符占用空格数
-set shiftwidth=4
+set shiftwidth=2
 " 将制表符扩展为空格
 set expandtab
 "在底部显示键入的命令

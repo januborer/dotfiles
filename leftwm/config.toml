@@ -334,10 +334,10 @@ key = "Left"
 # modifier = ["modkey","Shift"]
 # key = "t"
 
-[[keybind]]
-command = "TileToFloating"
-modifier = ["modkey", "Shift"]
-key = "f"
+# [[keybind]]
+# command = "TileToFloating"
+# modifier = ["modkey", "Shift"]
+# key = "f"
 
 [[keybind]]
 command = "ToggleFloating"
