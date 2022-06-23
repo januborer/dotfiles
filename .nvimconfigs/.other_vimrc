@@ -10,6 +10,7 @@ if !has('gui_running')
 endif
 
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+" autocmd FileType vue noremap <buffer> <c-f> :%!vue-formatter<CR>
 
 "vim教程
 "ctrl+v：选择块shift+i进入输入模式然后在第一行操作完成进入normal模式后其他选中内容将执行同样操作

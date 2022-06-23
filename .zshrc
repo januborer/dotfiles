@@ -2,6 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.zsh"
+# export HISTORY="$HOME/.history"
 
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
