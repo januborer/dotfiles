@@ -45,6 +45,7 @@ ln -sr ./.profile $HOME/.profile
 ln -sr ./shell_bins/vimman.sh $HOME/bin/vimman
 ln -sr ./shell_bins/evince-open.sh $HOME/bin/evince-open
 ln -sr ./shell_bins/slwm $HOME/bin/slwm
+ln -sr ./shell_bins/nxss $HOME/bin/nxss
 
 #####leftwm####
 
