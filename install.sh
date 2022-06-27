@@ -46,6 +46,8 @@ ln -sr ./shell_bins/vimman.sh $HOME/bin/vimman
 ln -sr ./shell_bins/evince-open.sh $HOME/bin/evince-open
 ln -sr ./shell_bins/slwm $HOME/bin/slwm
 ln -sr ./shell_bins/nxss $HOME/bin/nxss
+ln -sr $HOME/qks/qks $HOME/bin/qks
+ln -sr $HOME/qks/qks-client $HOME/bin/qks-client
 
 #####leftwm####
 
