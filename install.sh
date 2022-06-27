@@ -48,6 +48,7 @@ ln -sr ./shell_bins/slwm $HOME/bin/slwm
 ln -sr ./shell_bins/nxss $HOME/bin/nxss
 ln -sr $HOME/qks/qks $HOME/bin/qks
 ln -sr $HOME/qks/qks-client $HOME/bin/qks-client
+ln -sr ./xfce4-terminal/terminalrc $HOME/.config/xfce4/terminal/terminalrc
 
 #####leftwm####
 
