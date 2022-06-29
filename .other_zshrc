@@ -25,7 +25,10 @@
 # Set environment variable allow bypassing the proxy for specified repos (optional)
 # export GOPRIVATE=git.mycompany.com,github.com/my/private
 #
-#####fcitx######
+#####input method######
+export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
 # export GTK_IM_MODULE=fcitx5
 # export QT_IM_MODULE=fcitx5
 # export XMODIFIERS="@im=fcitx5"
@@ -100,12 +103,15 @@ xinput set-prop 10 278 1
 xinput set-prop 10 294 1
 # source $HOME/dotfile/leftwm/up
 
+##################exec############
+ibus-daemon -drxR
 ###############sway##############
 ##export WAYLAND_DISPLAY=alacritty
 if [ "$(tty)" = "/dev/tty1" ] && [ "$USER" = "borer" ]; then
   # exec sway
   #exec startxfce4
   exec slwm
+  exec nxss
   exit 0
 fi
 
