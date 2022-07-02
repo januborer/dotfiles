@@ -41,6 +41,8 @@ ln -sr ./.keynavrc $HOME/.keynavrc
 ln -sr ./.tmux.conf $HOME/.tmux.conf
 # profile
 ln -sr ./.profile $HOME/.profile
+ln -sr ./.profile $HOME/.bash_profile
+ln -sr ./.xprofile $HOME/.xprofile
 # others
 ln -sr ./shell_bins/vimman.sh $HOME/bin/vimman
 ln -sr ./shell_bins/evince-open.sh $HOME/bin/evince-open
@@ -48,7 +50,8 @@ ln -sr ./shell_bins/slwm $HOME/bin/slwm
 ln -sr ./shell_bins/nxss $HOME/bin/nxss
 ln -sr $HOME/qks/qks $HOME/bin/qks
 ln -sr $HOME/qks/qks-client $HOME/bin/qks-client
-ln -sr ./xfce4-terminal/terminalrc $HOME/.config/xfce4/terminal/terminalrc
+ln -sr ./xfce4-terminal/terminalrc
+$HOME/.config/xfce4/terminal/terminalrc
 
 #####leftwm####
 
