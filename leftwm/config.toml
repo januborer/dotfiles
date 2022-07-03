@@ -40,11 +40,107 @@ focus_new_windows = true
 # width = 200
 
 #######Keybind########
-
 ###Execute
+
 [[keybind]]
 command = "Execute"
-value = "rofi -show combi -combi-modi window,run,ssh -modi combi"
+value = "brightnessctl set 5%-"
+modifier = []
+key = "XF86MonBrightnessDown"
+
+[[keybind]]
+command = "Execute"
+value = "brightnessctl set +5%"
+modifier = []
+key = "XF86MonBrightnessUp"
+
+[[keybind]]
+command = "Execute"
+value = "pactl set-sink-volume @DEFAULT_SINK@ +5%"
+modifier = []
+key = "XF86AudioRaiseVolume"
+
+[[keybind]]
+command = "Execute"
+value = "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+modifier = []
+key = "XF86AudioLowerVolume"
+
+[[keybind]]
+command = "Execute"
+value = "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+modifier = []
+key = "XF86AudioMute"
+
+[[keybind]]
+command = "Execute"
+value = "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+modifier = []
+key = "XF86AudioMicMute"
+
+[[keybind]]
+command = "Execute"
+value = "playerctl play-pause"
+modifier = []
+key = "XF86AudioPlay"
+
+[[keybind]]
+command = "Execute"
+value = "playerctl next"
+modifier = []
+key = "XF86AudioNext"
+
+[[keybind]]
+command = "Execute"
+value = "playerctl previous"
+modifier = []
+key = "XF86AudioPrev"
+
+[[keybind]]
+command = "Execute"
+value = "dmenu_run"
+modifier = []
+key = "XF86Search"
+
+[[keybind]]
+command = "Execute"
+value = "netease-cloud-music"
+modifier = []
+key = "XF86Search"
+
+[[keybind]]
+command = "Execute"
+value = "grim $HOME/screenshots/$(date +'%s_grim.png')"
+modifier = []
+key = "Print"
+
+# [[keybind]]
+# command = "Execute"
+# value = "brightnessctl -q sset 5%+"
+# modifier = []
+# key = "XF86XK_MonBrightnessUp"
+
+# [[keybind]]
+# command = "Execute"
+# value = "brightnessctl -q sset 5%-"
+# modifier = []
+# key = "XF86XK_MonBrightnessDown"
+
+[[keybind]]
+command = "Execute"
+value = "rofi -show power-menu -modi power-menu:$HOME/.config/leftwm/themes/current/rofi-power-menu.sh"
+modifier = []
+key = "XF86XK_PowerOff"
+
+# [[keybind]]
+# command = "Execute"
+# value = "dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'"
+# modifier = ["modkey"]
+# key = "d"
+
+[[keybind]]
+command = "Execute"
+value = "rofi -show combi -combi-modi window,run,ssh -modi combi -theme /usr/share/rofi/themes/gruvbox-dark-soft.rasi"
 modifier = ["modkey"]
 key = "d"
 
@@ -82,7 +178,7 @@ key = "l"
 [[keybind]]
 command = "CloseWindow"
 value = ""
-modifier = ["modkey", "Shift"]
+modifier = ["modkey"]
 key = "q"
 
 [[keybind]]
