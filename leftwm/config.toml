@@ -164,6 +164,12 @@ key = "x"
 
 [[keybind]]
 command = "Execute"
+value = "Thunar"
+modifier = ["Mod4"]
+key = "e"
+
+[[keybind]]
+command = "Execute"
 value = "loginctl kill-session $XDG_SESSION_ID"
 modifier = ["modkey", "Shift"]
 key = "x"
