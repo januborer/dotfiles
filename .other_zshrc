@@ -113,7 +113,6 @@ xinput set-prop 10 294 1
 # source $HOME/dotfile/leftwm/up
 
 ##################exec############
-ibus-daemon -drxR
 ###############sway##############
 ##export WAYLAND_DISPLAY=alacritty
 if [ "$(tty)" = "/dev/tty1" ] && [ "$USER" = "borer" ]; then
