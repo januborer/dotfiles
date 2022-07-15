@@ -1,4 +1,13 @@
 #/bin/sh
+#pre install
+if [ ! -d "$HOME/temp" ]; then
+  mkdir -p $HOME/temp
+fi
+
+if [ ! -d "$HOME/temp/nerd-fonts" ]; then
+  git clone https://github.com/ryanoasis/nerd-fonts.git $HOME/temp/
+  $HOME/temp/nerd-fonts/install.sh
+fi
 # nvim
 if [ ! -d "$HOME/.config/nvim/plugged" ]; then
        	mkdir -p $HOME/.config/nvim/plugged
@@ -50,8 +59,8 @@ ln -sr ./shell_bins/slwm $HOME/bin/slwm
 ln -sr ./shell_bins/nxss $HOME/bin/nxss
 ln -sr $HOME/qks/qks $HOME/bin/qks
 ln -sr $HOME/qks/qks-client $HOME/bin/qks-client
-ln -sr ./xfce4-terminal/terminalrc
-$HOME/.config/xfce4/terminal/terminalrc
+ln -sr ./xfce4-terminal/terminalrc $HOME/.config/xfce4/terminal/terminalrc
+ln -sr ./.config/starship.toml $HOME/.config/starship.toml
 
 #####leftwm####
 
