@@ -49,7 +49,6 @@ ln -sr ./.keynavrc $HOME/.keynavrc
 # tmux
 ln -sr ./.tmux.conf $HOME/.tmux.conf
 # profile
-ln -sr ./.profile $HOME/.profile
 ln -sr ./.profile $HOME/.bash_profile
 ln -sr ./.xprofile $HOME/.xprofile
 # others
