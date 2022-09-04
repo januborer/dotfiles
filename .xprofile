@@ -1,10 +1,10 @@
 # . "$HOME/.cargo/env"
 
 #####input method framework
-# fcitx5 -d
-# GTK_IM_MODULE=fcitx5
-# QT_IM_MODULE=fcitx5
-# XMODIFIERS=@im=fcitx
+fcitx5 -d
+GTK_IM_MODULE=fcitx5
+QT_IM_MODULE=fcitx5
+XMODIFIERS=@im=fcitx
 #nohup unclutter -idle 10 &
 #nohup keynav &
 # if [ "$XDG_SESSION_TYPE" = "wayland" ] ; then

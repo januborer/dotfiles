@@ -1,6 +1,7 @@
 modkey = "Mod1"
 mousekey = "Mod1"
 # workspaces = [{x=0,y=0,width=3840,height=2160}]
+# workspaces = [{x=0,y=0,width=,height=2160}]
 workspaces = []
 tags = ["Clutter", "Conscious", "Thinking", "CS", "Rust", "Enjoy", "Communicate", "Eight", "Company"]
 layouts = ["MainAndVertStack", "MainAndHorizontalStack", "MainAndDeck", "GridHorizontal", "EvenHorizontal", "EvenVertical", "Fibonacci", "LeftMain", "CenterMain", "CenterMainBalanced", "CenterMainFluid", "Monocle", "RightWiderLeftStack", "LeftWiderRightStack"]
@@ -144,9 +145,14 @@ value = "rofi -show combi -combi-modi window,run,ssh -modi combi -theme /usr/sha
 modifier = ["modkey"]
 key = "d"
 
+# [[keybind]]
+# command = "Execute"
+# value = "xfce4-terminal"
+# modifier = ["modkey"]
+# key = "Return"
 [[keybind]]
 command = "Execute"
-value = "xfce4-terminal"
+value = "alacritty"
 modifier = ["modkey"]
 key = "Return"
 

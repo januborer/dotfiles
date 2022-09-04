@@ -102,14 +102,14 @@ fi
 
 ##################change some############
 # 交换ctrl和caps
-#/usr/bin/setxkbmap -option "ctrl:swapcaps"
+# /usr/bin/setxkbmap -option "ctrl:swapcaps"
 # setxkbmap -option "ctrl:swapcaps"
 # 还原所有键设置
 # /usr/bin/setxkbmap -option ""
 # exec nohup fcitx5 &
 
-xinput set-prop 10 278 1
-xinput set-prop 10 294 1
+xinput set-prop 9 284 1
+xinput set-prop 9 300 1
 # source $HOME/dotfile/leftwm/up
 
 ##################exec############
