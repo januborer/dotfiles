@@ -10,6 +10,7 @@ colorscheme gruvbox
 
 
 "-------vim基础配置-----
+set encoding=UTF-8
 " 显示行号
 set number
 " 显示当前行

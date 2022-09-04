@@ -3,7 +3,7 @@ mousekey = "Mod1"
 # workspaces = [{x=0,y=0,width=3840,height=2160}]
 # workspaces = [{x=0,y=0,width=,height=2160}]
 workspaces = []
-tags = ["Clutter", "Conscious", "Thinking", "CS", "Rust", "Enjoy", "Communicate", "Eight", "Company"]
+tags = ["Clutter", "Conscious", "Thinking", "CS", "Rust", "Enjoy", "Communicate", "Company","ten"]
 layouts = ["MainAndVertStack", "MainAndHorizontalStack", "MainAndDeck", "GridHorizontal", "EvenHorizontal", "EvenVertical", "Fibonacci", "LeftMain", "CenterMain", "CenterMainBalanced", "CenterMainFluid", "Monocle", "RightWiderLeftStack", "LeftWiderRightStack"]
 # Tag,Workspace
 layout_mode = "Workspace"
@@ -380,6 +380,12 @@ modifier = ["modkey"]
 key = "9"
 
 [[keybind]]
+command = "GotoTag"
+value = "0"
+modifier = ["modkey"]
+key = "0"
+
+[[keybind]]
 command = "MoveToTag"
 value = "1"
 modifier = ["modkey", "Shift"]
@@ -433,6 +439,11 @@ value = "9"
 modifier = ["modkey", "Shift"]
 key = "9"
 
+[[keybind]]
+command = "MoveToTag"
+value = "0"
+modifier = ["modkey", "Shift"]
+key = "0"
 # [[keybind]]
 # command = "ToggleScratchPad"
 # value = ""
