@@ -4,7 +4,7 @@
 export ZSH="$HOME/.zsh"
 # export HISTORY="$HOME/.history"
 
-source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,

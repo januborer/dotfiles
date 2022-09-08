@@ -144,9 +144,14 @@ value = "rofi -show combi -combi-modi window,run,ssh -modi combi -theme /usr/sha
 modifier = ["modkey"]
 key = "d"
 
+# [[keybind]]
+# command = "Execute"
+# value = "xfce4-terminal"
+# modifier = ["modkey"]
+# key = "Return"
 [[keybind]]
 command = "Execute"
-value = "xfce4-terminal"
+value = "LIBGL_ALWAYS_SOFTWARE=1 alacritty"
 modifier = ["modkey"]
 key = "Return"
 
