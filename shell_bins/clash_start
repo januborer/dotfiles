@@ -1,0 +1,1 @@
+echo ' ' | sudo clash -f $HOME/borer_git/secret_resources/clash.yaml

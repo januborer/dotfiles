@@ -45,6 +45,7 @@ export XMODIFIERS="@im=fcitx5"
 #export QT_IM_MODULE DEFAULT=fcitx
 #export XMODIFIERS DEFAULT=@im=fcitx
 #####################################
+export PKG_CONFIG_PATH=/usr/lib/aarch64-linux-gnu/pkgconfig/
 
 [[ $(command -v neofetch) ]] && neofetch
 # docker stop $(docker ps -q)
@@ -108,20 +109,20 @@ fi
 # /usr/bin/setxkbmap -option ""
 # exec nohup fcitx5 &
 
-xinput set-prop 9 277 1
-xinput set-prop 9 293 1
+#xinput set-prop 9 277 1
+#xinput set-prop 9 293 1
 # source $HOME/dotfile/leftwm/up
 
 ##################exec############
 ###############sway##############
 ##export WAYLAND_DISPLAY=alacritty
-if [ "$(tty)" = "/dev/tty1" ] && [ "$USER" = "borer" ]; then
+#if [ "$(tty)" = "/dev/tty1" ] && [ "$USER" = "borer" ]; then
   # exec sway
   #exec startxfce4
-  exec slwm
-  exec nxss
-  exit 0
-fi
+#  exec slwm
+#  exec nxss
+#  exit 0
+#fi
 
 ##############xfce##############
 # if [ "$(tty)" = "/dev/tty2" ] && [ "$USER" = "borer" ]; then
