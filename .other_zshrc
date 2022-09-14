@@ -45,6 +45,8 @@ export XMODIFIERS="@im=fcitx5"
 #export QT_IM_MODULE DEFAULT=fcitx
 #export XMODIFIERS DEFAULT=@im=fcitx
 #####################################
+#######rpi-rustdesk
+export VCPKG_FORCE_SYSTEM_BINARIES=1
 
 [[ $(command -v neofetch) ]] && neofetch
 # docker stop $(docker ps -q)
@@ -102,14 +104,14 @@ fi
 
 ##################change some############
 # 交换ctrl和caps
-#/usr/bin/setxkbmap -option "ctrl:swapcaps"
+ #/usr/bin/setxkbmap -option "ctrl:swapcaps"
 # setxkbmap -option "ctrl:swapcaps"
 # 还原所有键设置
-# /usr/bin/setxkbmap -option ""
+/usr/bin/setxkbmap -option ""
 # exec nohup fcitx5 &
 
-xinput set-prop 9 277 1
-xinput set-prop 9 293 1
+xinput set-prop 9 276 1
+xinput set-prop 9 292 1
 # source $HOME/dotfile/leftwm/up
 
 ##################exec############
