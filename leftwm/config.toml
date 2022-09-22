@@ -170,7 +170,8 @@ key = "x"
 
 [[keybind]]
 command = "Execute"
-value = "Thunar"
+# value = "Thunar"
+value = "nautilus"
 modifier = ["Mod4"]
 key = "e"
 
