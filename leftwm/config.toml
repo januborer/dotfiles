@@ -1,6 +1,7 @@
 modkey = "Mod1"
 mousekey = "Mod1"
 # workspaces = [{x=0,y=0,width=3840,height=2160}]
+# workspaces = [{x=0,y=0,width=,height=2160}]
 workspaces = []
 tags = ["Clutter", "Conscious", "Thinking", "CS", "Rust", "Enjoy", "Communicate", "Company","ten"]
 layouts = ["MainAndVertStack", "MainAndHorizontalStack", "MainAndDeck", "GridHorizontal", "EvenHorizontal", "EvenVertical", "Fibonacci", "LeftMain", "CenterMain", "CenterMainBalanced", "CenterMainFluid", "Monocle", "RightWiderLeftStack", "LeftWiderRightStack"]
