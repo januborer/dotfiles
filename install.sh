@@ -72,9 +72,10 @@ if [ ! -d "$HOME/.config/leftwm/themes" ]; then
 	mkdir -p $HOME/.config/leftwm/themes
 fi
 ## install amber theme
-git clone https://github.com/di-effe/amber.git $HOME/.config/leftwm/themes/amber
-rm -r $HOME/.config/leftwm/themes/current
-ln -sr $HOME/.config/leftwm/themes/amber $HOME/.config/leftwm/themes/current
+if [ ! -d "$HOME/.config/leftwm/themes/current" ]; then
+  git clone https://github.com/di-effe/amber.git $HOME/.config/leftwm/themes/amber
+  ln -sr $HOME/.config/leftwm/themes/amber $HOME/.config/leftwm/themes/current
+fi
 ##
 ln -sr ./leftwm/config.toml $HOME/.config/leftwm/config.toml
 # ln -sr ./leftwm/themes.toml $HOME/.config/leftwm/themes.toml
