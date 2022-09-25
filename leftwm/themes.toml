@@ -1,18 +1,12 @@
-[[repos]]
-url = "localhost"
-name = "LOCAL"
-definitions_version = 1
-[[repos.themes]]
-name = "eden"
-repository = "https://github.com/arcolinux/arcolinux-leftwm-theme-eden/"
-commit = "*"
-version = "2.4.1"
-leftwm_versions = "*"
-current = false
-[[repos.themes]]
-name = "Orange Forest"
-repository = "https://github.com/PVautour/leftwm-theme-orange-forest/"
-commit = "*"
-version = "0.0.1"
-leftwm_versions = "<0.3.0"
-current = false
+# To add additional repos, you MUST specify a url, a UNIQUE ALPHANUMERIC name, and an empty array of themes
+# e.g.:
+border_width = 3
+margin = 0
+default_border_color = "#32302f"
+floating_border_color = "#32302f"
+focused_border_color = "#698B22"
+
+[[gutter]]
+side = "Top"
+value = 0
+
