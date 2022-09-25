@@ -71,25 +71,30 @@ fi
 if [ ! -d "$HOME/.config/leftwm/themes" ]; then
 	mkdir -p $HOME/.config/leftwm/themes
 fi
+## install amber theme
+git clone https://github.com/di-effe/amber.git $HOME/.config/leftwm/themes/amber
+rm -r $HOME/.config/leftwm/themes/current
+ln -sr $HOME/.config/leftwm/themes/amber $HOME/.config/leftwm/themes/current
+##
 ln -sr ./leftwm/config.toml $HOME/.config/leftwm/config.toml
-ln -sr ./leftwm/themes.toml $HOME/.config/leftwm/themes.toml
+# ln -sr ./leftwm/themes.toml $HOME/.config/leftwm/themes.toml
 
 #############################################################
 
 #####sway######
-if [ ! -d "$HOME/.config/sway" ]; then
-	mkdir $HOME/.config/sway
-fi
-ln -sr ./swayconfigs/sway_config $HOME/.config/sway/config
-ln -sr ./swayconfigs/sway_run.sh $HOME/.config/sway/sway_run.sh
+# if [ ! -d "$HOME/.config/sway" ]; then
+	# mkdir $HOME/.config/sway
+# fi
+# ln -sr ./swayconfigs/sway_config $HOME/.config/sway/config
+# ln -sr ./swayconfigs/sway_run.sh $HOME/.config/sway/sway_run.sh
 
-if [ ! -d "$HOME/.config/waybar" ]; then
-	mkdir $HOME/.config/waybar
-fi
-ln -sr ./swayconfigs/waybarconfigs/config $HOME/.config/waybar/config
-ln -sr ./swayconfigs/waybarconfigs/style.css $HOME/.config/waybar/style.css
+# if [ ! -d "$HOME/.config/waybar" ]; then
+	# mkdir $HOME/.config/waybar
+# fi
+# ln -sr ./swayconfigs/waybarconfigs/config $HOME/.config/waybar/config
+# ln -sr ./swayconfigs/waybarconfigs/style.css $HOME/.config/waybar/style.css
 
-ln -sr ./.alacritty.yml $HOME/.alacritty.yml
+# ln -sr ./.alacritty.yml $HOME/.alacritty.yml
 
 #############################################################
 
