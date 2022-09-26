@@ -54,6 +54,7 @@ ln -sr ./.profile $HOME/.bash_profile
 ln -sr ./.xprofile $HOME/.xprofile
 # others
 ln -sr ./shell_bins/vimman.sh $HOME/bin/vimman
+ln -sr ./shell_bins/nomachine_bore $HOME/bin/nomachine_bore
 ln -sr ./shell_bins/evince-open.sh $HOME/bin/evince-open
 ln -sr ./shell_bins/slwm $HOME/bin/slwm
 ln -sr ./shell_bins/nxss $HOME/bin/nxss
