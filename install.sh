@@ -55,7 +55,8 @@ ln -sr ./.xprofile $HOME/.xprofile
 # others
 ln -sr ./shell_bins/vimman.sh $HOME/bin/vimman
 ln -sr ./shell_bins/ctrlcaps $HOME/bin/ctrlcaps
-ln -sr ./shell_bins/nomachine_bore $HOME/bin/nomachine_bore
+ln -sr ./shell_bins/nomachine-bore $HOME/bin/nomachine-bore
+ln -sr ./shell_bins/install-rust $HOME/bin/install-rust
 ln -sr ./shell_bins/evince-open.sh $HOME/bin/evince-open
 ln -sr ./shell_bins/slwm $HOME/bin/slwm
 ln -sr ./shell_bins/nxss $HOME/bin/nxss
