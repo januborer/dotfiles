@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-exec echo ' ' | sudo -S /etc/NX/nxserver --startup
