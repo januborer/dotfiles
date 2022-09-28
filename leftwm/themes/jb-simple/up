@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+SCRIPTPATH="$( cd "$(dirname "$0")" || exit; pwd -P )"
+# exec echo ' ' | sudo -S /etc/NX/nxserver --startup
+
+feh --bg-scale "$SCRIPTPATH"/background.png 2>&1 &
+
+leftwm-command "LoadTheme $SCRIPTPATH/theme.toml"
