@@ -1,5 +1,7 @@
 #/bin/sh
 #pre install
+SCRIPTPATH="$( cd "$(dirname "$0")" || exit; pwd -P )"
+
 if [ ! -d "$HOME/temp" ]; then
   mkdir -p $HOME/temp
 fi
@@ -75,9 +77,11 @@ if [ ! -d "$HOME/.config/leftwm/themes" ]; then
 	mkdir -p $HOME/.config/leftwm/themes
 fi
 ## install amber theme
+#ln -s $SCRIPTPATH/leftwm/themes/jb-simple $HOME/.config/leftwm/themes/current
 if [ ! -d "$HOME/.config/leftwm/themes/current" ]; then
   git clone https://github.com/di-effe/amber.git $HOME/.config/leftwm/themes/amber
   ln -sr $HOME/.config/leftwm/themes/amber $HOME/.config/leftwm/themes/current
+  ln -sr $SCRIPTPATH/leftwm/themes/jb-simple/theme.toml $HOME/.config/leftwm/themes/current/theme.toml
 fi
 ##
 ln -sr ./leftwm/config.toml $HOME/.config/leftwm/config.toml
