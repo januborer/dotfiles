@@ -6,10 +6,10 @@ if [ ! -d "$HOME/temp" ]; then
   mkdir -p $HOME/temp
 fi
 
-if [ ! -d "$HOME/temp/nerd-fonts" ]; then
-  git clone https://github.com/ryanoasis/nerd-fonts.git $HOME/temp/
-  $HOME/temp/nerd-fonts/install.sh
-fi
+#if [ ! -d "$HOME/temp/nerd-fonts" ]; then
+ # git clone https://github.com/ryanoasis/nerd-fonts.git $HOME/temp/
+  #$HOME/temp/nerd-fonts/install.sh
+#fi
 # nvim
 if [ ! -d "$HOME/.config/nvim/plugged" ]; then
        	mkdir -p $HOME/.config/nvim/plugged
@@ -77,7 +77,7 @@ if [ ! -d "$HOME/.config/leftwm/themes" ]; then
 	mkdir -p $HOME/.config/leftwm/themes
 fi
 ## install amber theme
-#ln -s $SCRIPTPATH/leftwm/themes/jb-simple $HOME/.config/leftwm/themes/current
+ln -s $SCRIPTPATH/leftwm/themes/jb-simple $HOME/.config/leftwm/themes/current
 if [ ! -d "$HOME/.config/leftwm/themes/current" ]; then
   git clone https://github.com/di-effe/amber.git $HOME/.config/leftwm/themes/amber
   ln -sr $HOME/.config/leftwm/themes/amber $HOME/.config/leftwm/themes/current
