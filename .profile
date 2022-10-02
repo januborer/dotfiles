@@ -43,4 +43,4 @@ XMODIFIERS=@im=fcitx
 
 . "$HOME/.cargo/env"
 
-source /home/borer/.config/broot/launcher/bash/br
+source $HOME/.config/broot/launcher/bash/br
