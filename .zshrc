@@ -4,7 +4,18 @@
 export ZSH="$HOME/.zsh"
 # export HISTORY="$HOME/.history"
 
-source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# enable auto-suggestions based on the history
+if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+    . /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+    # change suggestion color
+    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#999'
+fi
+# enable auto-suggestions based on the history
+if [ -f $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+    source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+    # change suggestion color
+    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#999'
+fi
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
