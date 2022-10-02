@@ -37,7 +37,6 @@ XMODIFIERS=@im=fcitx
     # export _JAVA_AWT_WM_NONREPARENTING=1
 # fi
 # nxss &
-
 . "$HOME/.cargo/env"
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
