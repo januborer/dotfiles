@@ -101,9 +101,10 @@ ln -sr ./leftwm/config.toml $HOME/.config/leftwm/config.toml
 # fi
 # ln -sr ./swayconfigs/waybarconfigs/config $HOME/.config/waybar/config
 # ln -sr ./swayconfigs/waybarconfigs/style.css $HOME/.config/waybar/style.css
+#############################################################
 
-# ln -sr ./.alacritty.yml $HOME/.alacritty.yml
-
+##################alacritty##################################
+ln -sr ./alacritty/.alacritty.yml $HOME/.alacritty.yml
 #############################################################
 
 ######spotify-tui#######
