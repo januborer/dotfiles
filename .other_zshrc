@@ -50,12 +50,6 @@
 # docker stop $(docker ps -q)
 ########## some aliases ##########
 # my-recent-study-book
-alias my-rsb="vim $HOME/git-repositories/books-tools/it-books/my-linux-study/about-shell/bash-pocket-reference_2ndedition.pdf"
-alias my-rsb2="vim $HOME/git-repositories/books-tools/it-books/my-linux-study/about-shell/Learning\ the\ bash\ Shell,\ 3rd\ Edition.pdf"
-alias my-rsb3="vim $HOME/git-repositories/books-tools/it-books/my-linux-study/about-shell/Linux\ Basics\ for\ Hackers\ Getting\ Started\ with\ Networking,\ Scripting,\ and\ Security\ in\ Kali.pdf"
-alias my-rustbook="vim $HOME/git-repositories/books-tools/it-books/The\ Rust\ Programming\ Language.pdf"
-alias juli-extend="cd $HOME/docker-run-env/app-images/lnmp/www/juli-extend"
-alias juli="cd $HOME/docker-run-env/app-images/lnmp/www/juli"
 alias tnew="tmux new -s"
 alias tto="tmux attach -t"
 alias vim="nvim"
@@ -63,21 +57,13 @@ alias man="vimman"
 alias ls="exa"
 # alias yay="trizen"
 # alias trans="trans :zh"
-alias my-practices="cd $HOME/my-practices"
-alias my-rustlings="cd $HOME/rustlings"
 export PATH="$HOME/.cargo/bin:$HOME/bin:$PATH:/usr/local/go/bin:/var/lib/snapd/snap/bin"
 alias proxy='export all_proxy=socks5://127.0.0.1:1080'
 alias proxy_http='export http_proxy=http://127.0.0.1:1087'
 alias proxy_https='export https_proxy=http://127.0.0.1:1087'
 alias unproxy='unset all_proxy'
 # alias sail='vendor/bin/sail'
-alias golearn='cd $HOME/gotest/golearn'
-alias rustlearn='cd $HOME/rust'
-alias es="nohup evince $HOME/Desktop/es6.pdf &"
 ######alias command########
-# alias two_screen_xiaomi_alacritty="if [ -f $HOME/.alacritty.yml ];then rm $HOME/.alacritty.yml fi \n ln -sr $HOME/dotfiles/alacrittys/two_screen_xiaomi_alacritty.yml"
-# alias two_screen_xiaomi_alacritty=`rm $HOME/.alacritty.yml && ln -sr $HOME/dotfiles/alacrittys/two_screen_xiaomi_alacritty.yml`
-# export GOPATH='$HOME/gotest/'
 alias my_audio=pulsemixer
 
 #############################
