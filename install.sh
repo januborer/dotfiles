@@ -77,11 +77,11 @@ if [ ! -d "$HOME/.config/leftwm/themes" ]; then
 	mkdir -p $HOME/.config/leftwm/themes
 fi
 ## install amber theme
-#ln -s $SCRIPTPATH/leftwm/themes/jb-simple $HOME/.config/leftwm/themes/current
+ln -sr ./leftwm/themes/jb-simple $HOME/.config/leftwm/themes/current
 if [ ! -d "$HOME/.config/leftwm/themes/current" ]; then
   git clone https://github.com/di-effe/amber.git $HOME/.config/leftwm/themes/amber
   ln -sr $HOME/.config/leftwm/themes/amber $HOME/.config/leftwm/themes/current
-  ln -sr $SCRIPTPATH/leftwm/themes/jb-simple/theme.toml $HOME/.config/leftwm/themes/current/theme.toml
+  #ln -sr ./leftwm/themes/jb-simple $HOME/.config/leftwm/themes/current
 fi
 ##
 ln -sr ./leftwm/config.toml $HOME/.config/leftwm/config.toml
