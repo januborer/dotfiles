@@ -127,11 +127,11 @@ key = "Print"
 # modifier = []
 # key = "XF86XK_MonBrightnessDown"
 
-[[keybind]]
-command = "Execute"
-value = "rofi -show power-menu -modi power-menu:$HOME/.config/leftwm/themes/current/rofi-power-menu.sh"
-modifier = []
-key = "XF86XK_PowerOff"
+# [[keybind]]
+# command = "Execute"
+# value = "rofi -show power-menu -modi power-menu:$HOME/.config/leftwm/themes/current/rofi-power-menu.sh"
+# modifier = []
+# key = "XF86XK_PowerOff"
 
 # [[keybind]]
 # command = "Execute"
@@ -141,7 +141,7 @@ key = "XF86XK_PowerOff"
 
 [[keybind]]
 command = "Execute"
-value = "rofi -show combi -combi-modi window,run,ssh -modi combi -theme /usr/share/rofi/themes/gruvbox-dark-soft.rasi"
+value = "rofi -show combi -combi-modi window,run,ssh,drun -modi combi -theme /usr/share/rofi/themes/gruvbox-dark-soft.rasi"
 modifier = ["modkey"]
 key = "d"
 
