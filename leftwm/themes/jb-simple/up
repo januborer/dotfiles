@@ -5,4 +5,7 @@ SCRIPTPATH="$( cd "$(dirname "$0")" || exit; pwd -P )"
 # feh --bg-scale "$SCRIPTPATH"/background.png 2>&1 &
 feh --bg-scale "/usr/share/blackarch/artwork/wallpaper"/capturingivs-three.jpg 2>&1 &
 
+####remote
+nxss &
+
 leftwm-command "LoadTheme $SCRIPTPATH/theme.toml"
