@@ -110,3 +110,7 @@ ln -sr ./alacritty/.alacritty.yml $HOME/.alacritty.yml
 ######spotify-tui#######
 ln -sr ./spotify_configs/client.yml $HOME/.config/spotify-tui/client.yml
 #############################################################
+#
+######clash#######
+ln -sr $HOME/borer-git/secret_resources/clash.yml $HOME/.config/clash/config.yaml
+#############################################################
