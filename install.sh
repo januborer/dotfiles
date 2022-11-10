@@ -1,5 +1,7 @@
 #/bin/sh
 #pre install
+SCRIPTPATH="$( cd "$(dirname "$0")" || exit; pwd -P )"
+
 if [ ! -d "$HOME/temp" ]; then
   mkdir -p $HOME/temp
 fi
@@ -54,6 +56,9 @@ ln -sr ./.profile $HOME/.bash_profile
 ln -sr ./.xprofile $HOME/.xprofile
 # others
 ln -sr ./shell_bins/vimman.sh $HOME/bin/vimman
+ln -sr ./shell_bins/ctrlcaps $HOME/bin/ctrlcaps
+ln -sr ./shell_bins/nomachine-bore $HOME/bin/nomachine-bore
+ln -sr ./shell_bins/install-rust $HOME/bin/install-rust
 ln -sr ./shell_bins/evince-open.sh $HOME/bin/evince-open
 ln -sr ./shell_bins/slwm $HOME/bin/slwm
 ln -sr ./shell_bins/nxss $HOME/bin/nxss
@@ -71,28 +76,41 @@ fi
 if [ ! -d "$HOME/.config/leftwm/themes" ]; then
 	mkdir -p $HOME/.config/leftwm/themes
 fi
+## install amber theme
+ln -sr ./leftwm/themes/jb-simple $HOME/.config/leftwm/themes/current
+if [ ! -d "$HOME/.config/leftwm/themes/current" ]; then
+  git clone https://github.com/di-effe/amber.git $HOME/.config/leftwm/themes/amber
+  ln -sr $HOME/.config/leftwm/themes/amber $HOME/.config/leftwm/themes/current
+  #ln -sr ./leftwm/themes/jb-simple $HOME/.config/leftwm/themes/current
+fi
+##
 ln -sr ./leftwm/config.toml $HOME/.config/leftwm/config.toml
-ln -sr ./leftwm/themes.toml $HOME/.config/leftwm/themes.toml
+# ln -sr ./leftwm/themes.toml $HOME/.config/leftwm/themes.toml
 
 #############################################################
 
 #####sway######
-if [ ! -d "$HOME/.config/sway" ]; then
-	mkdir $HOME/.config/sway
-fi
-ln -sr ./swayconfigs/sway_config $HOME/.config/sway/config
-ln -sr ./swayconfigs/sway_run.sh $HOME/.config/sway/sway_run.sh
+# if [ ! -d "$HOME/.config/sway" ]; then
+	# mkdir $HOME/.config/sway
+# fi
+# ln -sr ./swayconfigs/sway_config $HOME/.config/sway/config
+# ln -sr ./swayconfigs/sway_run.sh $HOME/.config/sway/sway_run.sh
 
-if [ ! -d "$HOME/.config/waybar" ]; then
-	mkdir $HOME/.config/waybar
-fi
-ln -sr ./swayconfigs/waybarconfigs/config $HOME/.config/waybar/config
-ln -sr ./swayconfigs/waybarconfigs/style.css $HOME/.config/waybar/style.css
+# if [ ! -d "$HOME/.config/waybar" ]; then
+	# mkdir $HOME/.config/waybar
+# fi
+# ln -sr ./swayconfigs/waybarconfigs/config $HOME/.config/waybar/config
+# ln -sr ./swayconfigs/waybarconfigs/style.css $HOME/.config/waybar/style.css
+#############################################################
 
-ln -sr ./.alacritty.yml $HOME/.alacritty.yml
-
+##################alacritty##################################
+ln -sr ./alacritty/.alacritty.yml $HOME/.alacritty.yml
 #############################################################
 
 ######spotify-tui#######
 ln -sr ./spotify_configs/client.yml $HOME/.config/spotify-tui/client.yml
+#############################################################
+#
+######clash#######
+ln -sr $HOME/borer-git/secret_resources/clash.yml $HOME/.config/clash/config.yaml
 #############################################################
