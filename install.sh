@@ -84,7 +84,8 @@ if [ ! -d "$HOME/.config/leftwm/themes/current" ]; then
   #ln -sr ./leftwm/themes/jb-simple $HOME/.config/leftwm/themes/current
 fi
 ##
-ln -sr ./leftwm/config.toml $HOME/.config/leftwm/config.toml
+# ln -sr ./leftwm/config.toml $HOME/.config/leftwm/config.toml
+ln -sr ./leftwm/config.ron $HOME/.config/leftwm/config.ron
 # ln -sr ./leftwm/themes.toml $HOME/.config/leftwm/themes.toml
 
 #############################################################
