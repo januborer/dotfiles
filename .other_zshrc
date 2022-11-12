@@ -95,8 +95,9 @@ fi
 # /usr/bin/setxkbmap -option ""
 # exec nohup fcitx5 &
 
-xinput set-prop 9 276 1
-xinput set-prop 9 292 1
+####tapping#####
+xinput set-prop 13 304 1
+xinput set-prop 13 283 1
 # source $HOME/dotfile/leftwm/up
 
 ##################exec############
