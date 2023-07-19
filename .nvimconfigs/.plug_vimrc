@@ -313,7 +313,7 @@ autocmd FileType html,css EmmetInstall
 " let g:user_emmet_leader_key=’,’
 
 " Plug 'SirVer/ultisnips'
-let g:UltiSnipsSnippetDirectories=["UltiSnips", "./edges/snippets"]
+" let g:UltiSnipsSnippetDirectories=["UltiSnips", \"./edges/snippets"]
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger='<tab>'
