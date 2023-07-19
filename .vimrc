@@ -57,8 +57,8 @@ Plug 'tpope/vim-surround'
 Plug 'leafoftree/vim-vue-plugin'
 " Plug 'maranimatias/vue-formatter'
 " 代码片段
-Plug 'honza/vim-snippets'
-Plug 'SirVer/ultisnips'
+" Plug 'honza/vim-snippets'
+" Plug 'SirVer/ultisnips'
 call plug#end()
 
 " let g:loaded_python3_provider=0
