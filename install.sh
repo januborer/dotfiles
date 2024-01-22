@@ -6,10 +6,10 @@ if [ ! -d "$HOME/temp" ]; then
   mkdir -p $HOME/temp
 fi
 
-if [ ! -d "$HOME/temp/nerd-fonts" ]; then
-  git clone https://github.com/ryanoasis/nerd-fonts.git $HOME/temp/
-  $HOME/temp/nerd-fonts/install.sh
-fi
+#if [ ! -d "$HOME/temp/nerd-fonts" ]; then
+#  git clone https://github.com/ryanoasis/nerd-fonts.git $HOME/temp/
+#  $HOME/temp/nerd-fonts/install.sh
+#fi
 # nvim
 if [ ! -d "$HOME/.config/nvim/plugged" ]; then
        	mkdir -p $HOME/.config/nvim/plugged
@@ -62,6 +62,7 @@ ln -sr ./shell_bins/install-rust $HOME/bin/install-rust
 ln -sr ./shell_bins/evince-open.sh $HOME/bin/evince-open
 ln -sr ./shell_bins/slwm $HOME/bin/slwm
 ln -sr ./shell_bins/nxss $HOME/bin/nxss
+ln -sr ./shell_bins/sdautoxrandr $HOME/bin/sdautoxrandr
 ln -sr $HOME/qks/qks $HOME/bin/qks
 ln -sr $HOME/qks/qks-client $HOME/bin/qks-client
 ln -sr ./xfce4-terminal/terminalrc $HOME/.config/xfce4/terminal/terminalrc
@@ -78,10 +79,10 @@ if [ ! -d "$HOME/.config/leftwm/themes" ]; then
 fi
 ## install amber theme
 ln -s ./leftwm/themes/jb-simple $HOME/.config/leftwm/themes/current
-if [ ! -d "$HOME/.config/leftwm/themes/current" ]; then
-  git clone https://github.com/di-effe/amber.git $HOME/.config/leftwm/themes/amber
-  ln -s $HOME/.config/leftwm/themes/amber $HOME/.config/leftwm/themes/current
-fi
+# if [ ! -d "$HOME/.config/leftwm/themes/current" ]; then
+  # git clone https://github.com/di-effe/amber.git $HOME/.config/leftwm/themes/amber
+  # ln -s $HOME/.config/leftwm/themes/amber $HOME/.config/leftwm/themes/current
+# fi
 ##
 # ln -sr ./leftwm/config.toml $HOME/.config/leftwm/config.toml
 ln -sr ./leftwm/config.ron $HOME/.config/leftwm/config.ron
