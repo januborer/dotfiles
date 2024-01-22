@@ -27,9 +27,9 @@ if [ ! -d "$HOME/.config/nvim/edges" ]; then
        	mkdir -p $HOME/.config/nvim/edges
 fi
 
-if [ ! -d "$HOME/my-practices" ]; then
-       	mkdir $HOME/my-practices
-fi
+# if [ ! -d "$HOME/my-practices" ]; then
+         # mkdir $HOME/my-practices
+# fi
 
 if [ ! -d "$HOME/bin" ]; then
 	mkdir $HOME/bin
