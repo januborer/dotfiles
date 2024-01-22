@@ -29,7 +29,7 @@ fi
 fcitx5 -d
 GTK_IM_MODULE=fcitx5
 QT_IM_MODULE=fcitx5
-XMODIFIERS=@im=fcitx
+XMODIFIERS=@im=fcitx5
 #nohup unclutter -idle 10 &
 #nohup keynav &
 # if [ "$XDG_SESSION_TYPE" = "wayland" ] ; then
