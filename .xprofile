@@ -12,4 +12,4 @@ XMODIFIERS=@im=fcitx
     # export _JAVA_AWT_WM_NONREPARENTING=1
 # fi
 # #######exec
-nxss &
+# nxss &

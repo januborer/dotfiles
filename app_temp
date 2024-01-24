@@ -1,5 +1,11 @@
 #/bin/bash
+slock
+#bright
+brightnessctl
+flameshot
+typora
 okular
+goldendict
 ranger
 cowsay
 ucollage
