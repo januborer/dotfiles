@@ -1,0 +1,138 @@
+#/bin/bash
+okular
+ranger
+cowsay
+ucollage
+htop
+ncdu
+wget
+git
+git-lfs
+pulsemixer
+pulseaudio
+bluez
+bluez-utils
+ripgrep
+neofetch
+cmus
+rslsync
+vlc
+nautilus
+evince
+audacity
+xclip
+calibre
+bore
+grim
+feh
+alacritty
+navi
+
+# An interactive cheatsheet tool for the command-line 
+cargo install navi
+navi repo add denisidoro/cheats
+
+# A command-line benchmarking tool.
+cargo install typerfine
+
+# A fast CSV command line toolkit written in Rust.
+cargo install xsv
+
+# A command-line hex viewer
+cargo install hexyl
+
+
+# Easily and securely share files from the command line.  A fully featured Firefox Send client.
+cargo install ffsend
+
+cargo install du-dust
+
+cargo install spotify-tui
+
+
+cargo install gitui
+
+# cargo install tui-rs
+
+cargo install anki
+
+cargo install rustlings
+
+cargo install rome
+
+#generate a book into web
+cargo install mdbook
+
+#games
+cargo install battleship-rs
+cargo install rust-sadari-cli
+cargo install minesweep
+
+#A feature rich terminal UI file transfer and explorer with support for SCP/SFTP/FTP/S3.
+cargo install termscp
+
+#Spotify for the terminal written in Rust
+cargo install spotify-tui
+
+#terminal bandwidth utilization tool
+cargo install bandwhich
+
+#Linux Kernel Manager and Activity Monitor
+cargo install kmon
+
+#Manage your GnuPG keys with easel
+cargo install gpg-tui
+
+#A TUI system monitor written in Rust
+cargo install ytop
+#sort of like top or htop but with zoom-able charts CPU.GPU,network,and disk usage
+cargo install zenith
+#Yet another cross-platform graphical process/system monitor.(btm)
+cargo install bottom
+
+#Blazing fast terminal-ui for git written in rust
+cargo install gitui
+
+#Terminal chat through the LAN with video streaming and file transfer.
+cargo install termchat
+#twitch chat tui 
+cargo install twitch-tui
+
+#ranger-like terminal file manager written in rust
+cargo install joshuto
+#Terminal disk space navigator
+cargo install diskonaut
+cargo install broot
+
+#$Rust ADS-B decoder +tui radar application:adsb_deku
+
+
+#cli command organizer written in rust
+cargo install hoard-rs
+
+#A modern alternative to the watch command
+cargo install hwatch
+
+#Youtube client in terminal for music
+cargo install ytui-music
+
+#Tui image viewer
+cargo install picterm
+
+#A cross-platform tui database management tool written in rust
+cargo install gobang
+
+#tokei is a program that display statistics about your code.
+cargo install tokei
+
+# fd instend of find
+cargo install fd
+
+#procs instend of ps
+cargo install procs
+
+#onefetch
+cargo install onefetch
+
+#USAGE
+#bottom(btm),kmon,bandwhich,gitui,joshuto,mkbook,battleship-rs,minesweep,termscp,pros,onefetch,bat,fd,repg,dust,goband,ytui-music,broot(br),oxker,trippy,gping,kdash,termchat,
