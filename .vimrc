@@ -1,6 +1,7 @@
 "------------插件安装-------------------
 call plug#begin('~/.config/nvim/plugged')
 Plug 'neovim/nvim-lspconfig'
+Plug 'neovim/nvim-lsp'
 Plug 'godlygeek/tabular'
 
 Plug 'mhinz/vim-startify'
