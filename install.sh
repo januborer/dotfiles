@@ -62,7 +62,8 @@ ln -sr ./shell_bins/install-rust $HOME/bin/install-rust
 ln -sr ./shell_bins/evince-open.sh $HOME/bin/evince-open
 ln -sr ./shell_bins/slwm $HOME/bin/slwm
 ln -sr ./shell_bins/nxss $HOME/bin/nxss
-ln -sr ./shell_bins/sdautoxrandr $HOME/bin/sdautoxrandr
+ln -sr ./shell_bins/no_sd_mi_xrandr $HOME/bin/no_sd_mi_xrandr
+ln -sr ./shell_bins/sd_mi_xrandr $HOME/bin/sd_mi_xrandr
 ln -sr $HOME/qks/qks $HOME/bin/qks
 ln -sr $HOME/qks/qks-client $HOME/bin/qks-client
 ln -sr ./xfce4-terminal/terminalrc $HOME/.config/xfce4/terminal/terminalrc
