@@ -7,7 +7,7 @@ feh --bg-scale "/usr/share/blackarch/artwork/wallpaper"/capturingivs-three.jpg 2
 
 # xrandr change steamdeck rotate
 # xrandr --output eDP-1 --rotate right
-xrandr --output eDP-1 --mode 800x1280 --pos 0x1440 --rotate right --output DP-1 --primary --mode 3440x1440 --pos 0x0 --rotate normal
+# xrandr --output eDP-1 --mode 800x1280 --pos 0x1440 --rotate right --output DP-1 --primary --mode 3440x1440 --pos 0x0 --rotate normal
 
 ####remote
 # nxss &
