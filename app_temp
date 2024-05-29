@@ -1,4 +1,6 @@
 #/bin/bash
+# ntfs-3g
+nfs-utils
 slock
 #bright
 brightnessctl

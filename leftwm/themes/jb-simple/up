@@ -3,7 +3,8 @@ SCRIPTPATH="$( cd "$(dirname "$0")" || exit; pwd -P )"
 # exec echo ' ' | sudo -S /etc/NX/nxserver --startup
 
 # feh --bg-scale "$SCRIPTPATH"/background.png 2>&1 &
-feh --bg-scale "/usr/share/blackarch/artwork/wallpaper"/capturingivs-three.jpg 2>&1 &
+# feh --bg-scale "/usr/share/blackarch/artwork/wallpaper"/capturingivs-three.jpg 2>&1 &
+feh --bg-scale ./background.png 2>&1 &
 
 # xrandr change steamdeck rotate
 # xrandr --output eDP-1 --rotate right
