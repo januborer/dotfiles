@@ -39,7 +39,9 @@ if status is-interactive
     # source $HOME/dotfile/leftwm/up
 
     ########Source#########
-    source /home/borer/.config/broot/launcher/bash/br
+    if  test -f "/home/borer/.config/broot/launcher/bash/br"
+      # source  /home/borer/.config/broot/launcher/bash/br
+    end
     # if [ -f ~/.fzf.zsh ]; then
         # source ~/.fzf.zsh
     # fi
@@ -55,7 +57,7 @@ if status is-login
     ##############Desktop################
     #Leftwm
     ##export WAYLAND_DISPLAY=alacritty
-    if [ "$(tty)" = "/dev/tty1" ] && [ "$USER" = "borer" ]; then
+    if [ "$(tty)" = "/dev/tty1" ] && [ "$USER" = "borer" ]
       # exec sway
       #exec startxfce4
       exec slwm
