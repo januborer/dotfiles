@@ -44,8 +44,8 @@ ln -sr ./.nvimconfigs/.other_vimrc $HOME/.config/nvim/.other_vimrc
 ln -sr ./.nvimconfigs/autoload/plug.vim $HOME/.config/nvim/autoload/plug.vim
 ln -sr ./.nvimconfigs/edges/snippets $HOME/.config/nvim/edges/
 # zsh
-ln -sr ./.zshrc $HOME/.zshrc
-ln -sr ./.other_zshrc $HOME/.other_zshrc
+# ln -sr ./.zshrc $HOME/.zshrc
+# ln -sr ./.other_zshrc $HOME/.other_zshrc
 # keynav
 ln -sr ./.keynavrc $HOME/.keynavrc
 # tmux
@@ -68,6 +68,7 @@ ln -sr $HOME/qks/qks $HOME/bin/qks
 ln -sr $HOME/qks/qks-client $HOME/bin/qks-client
 ln -sr ./xfce4-terminal/terminalrc $HOME/.config/xfce4/terminal/terminalrc
 ln -sr ./.config/starship.toml $HOME/.config/starship.toml
+ln -sr ./fish/config.fish $HOME/.config/fish/config.fish
 
 #####leftwm####
 

@@ -107,7 +107,7 @@ if [ "$(tty)" = "/dev/tty1" ] && [ "$USER" = "borer" ]; then
   # exec sway
   #exec startxfce4
   exec slwm
-  exec nxss
+  # exec nxss
   exit 0
 fi
 

@@ -9,7 +9,7 @@
 #![enable(implicit_some)]
 (
     modkey: "Mod1",
-    mousekey: "Mod1",
+    mousekey: "Mod3",
     tags: [
         "Clutter",
         "Conscious",

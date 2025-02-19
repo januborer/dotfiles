@@ -33,7 +33,7 @@ Plug 'tpope/vim-abolish' "查找替换插件:Subvert/address{,es}/reference{,s}/
 Plug 'mattn/vim-gist' "将配置文件传到github的gists
 Plug 'mattn/webapi-vim'
 Plug 'apzelos/blamer.nvim'
-Plug 'rust-lang/rust.vim'
+
 Plug 'preservim/nerdcommenter'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
@@ -56,6 +56,15 @@ Plug 'rafi/awesome-vim-colorschemes'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
 Plug 'leafoftree/vim-vue-plugin'
+
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
+
 " Plug 'maranimatias/vue-formatter'
 " 代码片段
 " Plug 'honza/vim-snippets'
@@ -66,5 +75,19 @@ call plug#end()
 source $HOME/.config/nvim/.custom_vimrc
 source $HOME/.config/nvim/.plug_vimrc
 source $HOME/.config/nvim/.other_vimrc
+
+" Automatic commands
+" if has("autocmd")
+    " " Enable file type detection
+    " filetype on
+    " autocmd BufRead,BufNewFile *.hurl setlocal filetype=hurl
+    " " Auto-format *.rs (rust) files prior to saving them
+    " " (async = false is the default for format)
+    " autocmd BufWritePre *.rs,*.go,*.tf lua vim.lsp.buf.format({ async = false })
+    " " Get the 2-space YAML as the default when hit carriage return after the colon
+    " autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+    " " Trim trailing white space on save
+    " autocmd BufWritePre * :call StripWhitespace()
+" endif
 " 控制透明--且要加在colorscheme后面
 hi Normal ctermfg=252 ctermbg=none

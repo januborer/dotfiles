@@ -26,13 +26,15 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 #####input method framework
-fcitx5 -d
-GTK_IM_MODULE=fcitx5
-QT_IM_MODULE=fcitx5
-XMODIFIERS="@im=fcitx5"
-GTK_IM_MODULE DEFAULT=fcitx5
-QT_IM_MODULE DEFAULT=fcitx5
-XMODIFIERS DEFAULT=@im=fcitx5
+export GTK_IM_MODULE=fcitx5
+export QT_IM_MODULE=fcitx5
+export XMODIFIERS="@im=fcitx5"
+export GTK_IM_MODULE DEFAULT=fcitx5
+export QT_IM_MODULE DEFAULT=fcitx5
+export XMODIFIERS DEFAULT=@im=fcitx5
+# GTK_IM_MODULE DEFAULT=fcitx5
+# QT_IM_MODULE DEFAULT=fcitx5
+# XMODIFIERS DEFAULT=@im=fcitx5
 #nohup unclutter -idle 10 &
 #nohup keynav &
 # if [ "$XDG_SESSION_TYPE" = "wayland" ] ; then

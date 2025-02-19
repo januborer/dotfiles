@@ -218,6 +218,11 @@ let g:rustfmt_autosave = 1 "使用rustfmt格式化代码
 " preservim/nerdcommenter插件
 " <leader>cc添加注释，<leader>cu取消注释,<leader>c<space>智能判断添加和取消注释
 let g:NERDSpaceDelims=1     " 注释后面自动加空格
+" lspconfig.rust_analyzer.steup{
+  " settings={
+    " ['rust-analyzer']={},
+  " },
+" }
 
 
 
