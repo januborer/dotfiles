@@ -27,15 +27,12 @@ if status is-interactive
 
 
     ###########Changes##########
-
-    ##################change some############
     # 交换ctrl和caps
     # /usr/bin/setxkbmap -option "ctrl:swapcaps"
     # setxkbmap -option "ctrl:swapcaps"
     # 还原所有键设置
     # /usr/bin/setxkbmap -option ""
     # exec nohup fcitx5 &
-
     ####tapping#####
     # xinput set-prop 13 304 1
     # xinput set-prop 13 283 1
