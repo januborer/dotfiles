@@ -1,6 +1,6 @@
 "------------插件安装-------------------
 call plug#begin('~/.config/nvim/plugged')
-Plug 'neovim/nvim-lspconfig'
+Plug  'neovim/nvim-lspconfig'
 Plug 'neovim/nvim-lsp'
 Plug 'godlygeek/tabular'
 
@@ -64,6 +64,7 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
+Plug 'rust-lang/rust.vim'
 
 " Plug 'maranimatias/vue-formatter'
 " 代码片段
@@ -75,7 +76,8 @@ call plug#end()
 source $HOME/.config/nvim/.custom_vimrc
 source $HOME/.config/nvim/.plug_vimrc
 source $HOME/.config/nvim/.other_vimrc
-
+syntax enable
+filetype plugin indent on
 " Automatic commands
 " if has("autocmd")
     " " Enable file type detection

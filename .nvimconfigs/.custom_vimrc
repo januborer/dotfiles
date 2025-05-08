@@ -61,7 +61,7 @@ set cindent
 set incsearch
 " 启动文件类型加载插件根据文件类型不同加载对应插件
 " if has('autocmd')
-    " filetype plugin indent on
+filetype plugin indent on
 " endif
 " 启动vim时不显示介绍信息
 set shortmess+=I
