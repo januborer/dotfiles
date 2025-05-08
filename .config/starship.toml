@@ -1,8 +1,0 @@
-[time]
-disabled = false
-format = "[$time]($style)"
-time_format = "%H:%M"
-
-[rust]
-format = "via [⚙️ $version](red bold)"
-symbol = "🦀 "

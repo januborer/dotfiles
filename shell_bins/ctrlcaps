@@ -1,7 +1,0 @@
-#!/bin/bash
-echo $#
-if [ $# -gt 0 ];then
-  /usr/bin/setxkbmap -option "ctrl:swapcaps"
-else
-  /usr/bin/setxkbmap -option ""
-fi
