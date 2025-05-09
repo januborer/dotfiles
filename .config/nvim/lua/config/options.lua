@@ -51,3 +51,5 @@ o.wrapmargin=2
 o.autoread=true
 --o.foldmethod=indent
 --o.nofoldenable=true
+-- Use the OS clipboard by default (on versions compiled with `+clipboard`)
+-- vim.o.clipboard = vim.o.clipboard .. "unnamedplus"

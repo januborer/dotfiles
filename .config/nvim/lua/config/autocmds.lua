@@ -8,3 +8,4 @@
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 -- vim.cmd.colorscheme = tokyonight
 vim.cmd([[colorscheme gruvbox]])
+vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
