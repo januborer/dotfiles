@@ -22,5 +22,10 @@ return {
       vim.keymap.del('n', 'e', { buffer = bufnr })
     end,
     sync_root_with_cwd = true,
+    view = {
+      side = "right",
+      width = 35,
+      cursorline = false,
+    },
   }
 }
