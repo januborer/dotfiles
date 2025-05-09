@@ -35,6 +35,7 @@ grim
 feh
 alacritty
 navi
+rnote
 
 # An interactive cheatsheet tool for the command-line 
 cargo install navi
