@@ -109,76 +109,133 @@
 #################################################
 #
 if status is-interactive
-    # Commands to run in interactive sessions can go here
+  # Commands to run in interactive sessions can go here
 
-    ############ Export #############
-    # #@###fcitx5
-    export GTK_IM_MODULE=fcitx5
-    export QT_IM_MODULE=fcitx5
-    export XMODIFIERS="@im=fcitx5"
-    export GTK_IM_MODULE DEFAULT=fcitx5
-    export QT_IM_MODULE DEFAULT=fcitx5
-    export XMODIFIERS DEFAULT=@im=fcitx5
+  ############ Export #############
+  # #@###fcitx5
+  export GTK_IM_MODULE=fcitx5
+  export QT_IM_MODULE=fcitx5
+  export XMODIFIERS="@im=fcitx5"
+  export GTK_IM_MODULE DEFAULT=fcitx5
+  export QT_IM_MODULE DEFAULT=fcitx5
+  export XMODIFIERS DEFAULT=@im=fcitx5
 
-    ########## Aliases ##########
-    # my-recent-study-book
-    alias tnew="tmux new -s"
-    alias tto="tmux attach -t"
-    alias vim="nvim"
-    alias man="vimman"
-    alias ls="exa"
-    # alias yay="trizen"
-    # alias trans="trans :zh"
-    export PATH="$HOME/.cargo/bin:$HOME/dotfiles/bin:$PATH:/usr/local/go/bin:/var/lib/snapd/snap/bin"
-    ######alias command########
-    alias my_audio=pulsemixer
+  ########## Aliases ##########
+  # my-recent-study-book
+  alias tnew="tmux new -s"
+  alias tto="tmux attach -t"
+  alias vim="nvim"
+  #alias man="vimman"
+  alias ls="exa"
+  # alias yay="trizen"
+  # alias trans="trans :zh"
+  export PATH="$HOME/.cargo/bin:$HOME/dotfiles/bin:$PATH:/usr/local/go/bin:/var/lib/snapd/snap/bin"
+  ######alias command########
+  alias my_audio=pulsemixer
+  #alias proxy='export all_proxy=socks5h://192.168.68.236:1080'
+  #alias http_proxy='export http_proxy=socks5://192.168.68.236:1080'
+  #alias https_proxy='export https_proxy=socks5://192.168.68.236:1080'
+  #alias unproxy='unset all_proxy'
 
-    #############################
+  #############################
 
 
-    ###########Changes##########
-    # 交换ctrl和caps
-    # /usr/bin/setxkbmap -option "ctrl:swapcaps"
-    # setxkbmap -option "ctrl:swapcaps"
-    # 还原所有键设置
-    # /usr/bin/setxkbmap -option ""
-    # exec nohup fcitx5 &
-    ####tapping#####
-    # xinput set-prop 13 304 1
-    # xinput set-prop 13 283 1
-    # source $HOME/dotfile/leftwm/up
+  ###########Changes##########
+  # 交换ctrl和caps
+  # /usr/bin/setxkbmap -option "ctrl:swapcaps"
+  # setxkbmap -option "ctrl:swapcaps"
+  # 还原所有键设置
+  # /usr/bin/setxkbmap -option ""
+  # exec nohup fcitx5 &
+  ####tapping#####
+  # xinput set-prop 13 304 1
+  # xinput set-prop 13 283 1
+  # source $HOME/dotfile/leftwm/up
 
-    ########Source#########
-    if  test -f "/home/borer/.config/broot/launcher/bash/br"
-      # source  /home/borer/.config/broot/launcher/bash/br
-    end
-    # if [ -f ~/.fzf.zsh ]; then
-        # source ~/.fzf.zsh
-    # fi
+  ########Source#########
+  if  test -f "/home/borer/.config/broot/launcher/bash/br"
+    # source  /home/borer/.config/broot/launcher/bash/br
+  end
+  # if [ -f ~/.fzf.zsh ]; then
+      # source ~/.fzf.zsh
+  # fi
 
-    # if [ -f /usr/share/fzf/key-bindings.zsh ]; then
-        # source /usr/share/fzf/key-bindings.zsh
-    # fi
+  # if [ -f /usr/share/fzf/key-bindings.zsh ]; then
+      # source /usr/share/fzf/key-bindings.zsh
+  # fi
 end
 
 if status is-login
-    # Commands to run in login sessions can go here
+  # Commands to run in login sessions can go here
 
-    ##############Desktop################
-    #Leftwm
-    ##export WAYLAND_DISPLAY=alacritty
-    if [ "$(tty)" = "/dev/tty1" ] && [ "$USER" = "borer" ]
-      # exec sway
-      #exec startxfce4
-      exec slwm
-      # exec nxss
-      exit 0
-    end
+  ##############Desktop################
+  #Leftwm
+  ##export WAYLAND_DISPLAY=alacritty
+  if [ "$(tty)" = "/dev/tty1" ] && [ "$USER" = "borer" ]
+    # exec sway
+    #exec startxfce4
+    exec slwm
+    # exec nxss
+    exit 0
+  end
 
-    #Xfce4
-    # if [ "$(tty)" = "/dev/tty2" ] && [ "$USER" = "borer" ]; then
-      # export QT_QPA_PLATFORM=xcb
-      # exec startxfce4
-      # exit 0
-      # end
+  #Xfce4
+  # if [ "$(tty)" = "/dev/tty2" ] && [ "$USER" = "borer" ]; then
+    # export QT_QPA_PLATFORM=xcb
+    # exec startxfce4
+    # exit 0
+    # end
 end
+
+
+###########FUNCTIONS##########
+set PROXY_IP "192.168.68.236"
+#set PROXY_IP "10.47.182.136"
+#set PROXY_SOCKS_PORT "1080"
+set PROXY_HTTP_PORT "8080"
+#set PROXY_SOCKS_TYPE "socks5h"
+set PROXY_HTTP_TYPE "http"
+#set PROXY_VALUE "$PROXY_SOCKS_TYPE://$PROXY_IP:$PROXY_SOCKS_PORT"
+set PROXY_VALUE "$PROXY_HTTP_TYPE://$PROXY_IP:$PROXY_HTTP_PORT"
+function proxy_on
+  #set NO_PROXY "localhost,127.0.0.1,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16,.local,$PROXY_IP"
+  set NO_PROXY "localhost,127.0.0.1"
+  #set -l gateway (ip route | string match -r 'default via [0-9.]+' | string replace -r '.*via ' '' | string trim)
+  #or set -l gateway "$PROXY_IP"
+  set -gx http_proxy "$PROXY_VALUE"
+  set -gx HTTP_PROXY "$PROXY_VALUE"
+  set -gx https_proxy "$PROXY_VALUE"
+  set -gx HTTPS_PROXY "$PROXY_VALUE"
+  set -gx ALL_PROXY "$PROXY_VALUE"
+  set -gx all_proxy "$PROXY_VALUE"
+  set -gx NO_PROXY "$NO_PROXY"
+  set -gx no_proxy "$NO_PROXY"
+  #########git proxy#############
+  #git config --global http.proxy "$HTTP_PROXY_VALUE" 2>/dev/null || true
+  #git config --global https.proxy "$HTTP_PROXY_VALUE" 2>/dev/null || true
+  #git config --global http.proxy "$PROXY_VALUE" 2>/dev/null || true
+  #git config --global https.proxy "$PROXY_VALUE" 2>/dev/null || true
+  #set -gx GIT_PROXY_COMMAND 'sh -c "exec socat - \"PROXY:192.168.68.236:\$1:\$2,proxyport=1080\"" - $1 $2'
+  #set -gx GIT_PROXY_COMMAND "ncat --proxy $PROXY_VALUE $1 $2"
+  echo -e "Proxy on"
+end
+
+function check_hotspot
+  if not curl --connect-timeout 5 --proxy "$proxy" http://httpbin.org/ip >/dev/null 2>&1
+    echo "Socks5 cant use."
+    return 1
+  else
+    echo "Socks5 can use."
+    return 1
+  end
+end
+function proxy_off
+  set -e http_proxy https_proxy HTTP_PROXY HTTPS_PROXY NO_PROXY no_proxy
+  #git config --global --unset http.proxy
+  #git config --global --unset https.proxy
+  echo -e "\nProxy off"
+end
+
+
+
+#############################
