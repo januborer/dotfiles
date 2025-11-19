@@ -51,9 +51,10 @@ set $lock swaylock -f -c 000000
 
 # focus output DP-2
 
-# output DP-2 scale 1
+output DP-1 scale 1.5
 output DP-1 resolution 3440x1440 position 0,0
-output eDP-1 resolution 800x1280 position 0,1440
+#output eDP-1 resolution 800x1280 position 0,1440
+output eDP-1 disable
 # output DP-2 bg $HOME/dotfiles/picture/rust-rust.png  fill
 
 # output DP-2 bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
@@ -358,8 +359,16 @@ bindsym $mod+r mode "resize"
     # Special keys to adjust brightness via brightnessctl
     bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+
+    #######Screenshot grim+slurp#########
     # Special key to take a screenshot with grim
-    bindsym Print exec grim
+    # Ensure you have a 'Screenshots' directory
+    exec mkdir -p $HOME/Screenshots
+    # 1. Capture a selected region (Recommended)
+    bindsym Mod4+x exec grim -g "$(slurp)" $HOME/Screenshots/$(date +%Y%m%d_%H%M%S).png
+    # 2. Capture the full screen output
+    bindsym $mod+Print exec grim $HOME/Screenshots/$(date +%Y%m%d_%H%M%S).png
+    ####################################
 #
 # my bind keys
 #

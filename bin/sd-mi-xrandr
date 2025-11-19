@@ -1,1 +1,0 @@
-xrandr --output eDP-1 --mode 800x1280 --pos 0x1440 --rotate right --output DP-1 --primary --mode 3440x1440 --pos 0x0 --rotate normal

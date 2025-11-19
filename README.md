@@ -1,17 +1,15 @@
 # dotfiles
 
-my linux profiles
+My FreeBSD+Sway profiles
 
 ## Preconditions
 
 **The Following Softwares should be installed**
 
-tmux,vim(gvim),zsh,oh-my-zsh,keynav,ctags,ripgrep,fzf,navi,lsd
+tmux,neovim,fish,exa,sway,alacritty,setxkbmap,grim,slurp
 
-## mapping profiles
+## Install
 
 sudo chmod +x ./install.sh
 
 ./install.sh
-
-## informations
