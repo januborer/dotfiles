@@ -119,6 +119,7 @@ if status is-interactive
   export GTK_IM_MODULE DEFAULT=fcitx5
   export QT_IM_MODULE DEFAULT=fcitx5
   export XMODIFIERS DEFAULT=@im=fcitx5
+  export PATH="$HOME/.cargo/bin:$HOME/dotfiles/bin:$PATH:/usr/local/go/bin:/var/lib/snapd/snap/bin"
 
   ########## Aliases ##########
   # my-recent-study-book
@@ -127,15 +128,10 @@ if status is-interactive
   alias vim="nvim"
   #alias man="vimman"
   alias ls="exa"
+  alias my_audio=pulsemixer
   # alias yay="trizen"
   # alias trans="trans :zh"
-  export PATH="$HOME/.cargo/bin:$HOME/dotfiles/bin:$PATH:/usr/local/go/bin:/var/lib/snapd/snap/bin"
   ######alias command########
-  alias my_audio=pulsemixer
-  #alias proxy='export all_proxy=socks5h://192.168.68.236:1080'
-  #alias http_proxy='export http_proxy=socks5://192.168.68.236:1080'
-  #alias https_proxy='export https_proxy=socks5://192.168.68.236:1080'
-  #alias unproxy='unset all_proxy'
 
   #############################
 
@@ -168,23 +164,16 @@ end
 if status is-login
   # Commands to run in login sessions can go here
 
-  ##############Desktop################
-  #Leftwm
+  ##############WM################
   ##export WAYLAND_DISPLAY=alacritty
-  if [ "$(tty)" = "/dev/tty1" ] && [ "$USER" = "borer" ]
+  #  if [ "$(tty)" = "/dev/tty1" ] && [ "$USER" = "borer" ]
     # exec sway
     #exec startxfce4
-    exec slwm
+    #  exec sway -c ~/.config/sway/config
     # exec nxss
-    exit 0
-  end
+    #exit 0
+    #end
 
-  #Xfce4
-  # if [ "$(tty)" = "/dev/tty2" ] && [ "$USER" = "borer" ]; then
-    # export QT_QPA_PLATFORM=xcb
-    # exec startxfce4
-    # exit 0
-    # end
 end
 
 

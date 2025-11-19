@@ -1,28 +1,35 @@
-# [font.bold]
-# family = "MonaspiceNe Nerd Font Mono"
-# style = "Bold"
-
-# [font.bold_italic]
-# family = "MonaspiceNe Nerd Font Mono"
-# style = "Bold Italic"
-
-# [font.italic]
-# family = "MonaspiceNe Nerd Font Mono"
-# style = "Italic"
-
-[font.normal]
-family = "Cascadia Code NF"
-# style = "Regular"
+# ~/.config/alacritty/alacritty.toml
 
 [font]
-size = 16
+size = 19.0
+
+# Specify the regular font style
+[font.normal]
+family = "JetBrains Mono"
+style = "Regular"
+
+[[keyboard.bindings]]
+key = "V"
+mods = "Control"
+action = "Paste" # Uses the standard Clipboard
+
+[[keyboard.bindings]]
+key = "C"
+mods = "Control"
+action = "Copy"  # Uses the standard Clipboard
+
+# You might also want this for mouse selection (Primary buffer paste)
+[[keyboard.bindings]]
+key = "V"
+mods = "Shift|Control"
+action = "PasteSelection" # Uses the Primary Selection
 
 [window]
 # decorations = "None"
 option_as_alt = "OnlyLeft"
 
-[keyboard]
-bindings = [
-  { key = "Key6" , mods = "Control"       , chars = "\u001e" } ,
-  { key = "P"    , mods = "Control|Shift" , mode = "~Vi|~Search" , action = "ToggleViMode" } ,
-]
+#[keyboard]
+#bindings = [
+#  { key = "Key6" , mods = "Control"       , chars = "\u001e" } ,
+#  { key = "P"    , mods = "Control|Shift" , mode = "~Vi|~Search" , action = "ToggleViMode" } ,
+#]
