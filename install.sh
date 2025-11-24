@@ -9,5 +9,6 @@ ln -s ~/dotfiles/.config/tmux/.tmux.conf ~/.tmux.conf
 ln -s ~/dotfiles/.config/sway/config ~/.config/sway/config
 ln -s ~/dotfiles/freebsd/.profile ~/.profile
 ln -s ~/dotfiles/bin ~/bin
+ln -s ~/dotfiles/.config/sway/swaybar ~/.config/waybar
 
 #############################################################

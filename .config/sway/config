@@ -10,6 +10,7 @@
 input * xkb_rules evdev
 #exec --no-startup-id fcitx5 -r
 #exec fcitx5 -d
+exec fcitx5
 set $mod Mod1
 # Home row direction keys, like vim
 set $left h
@@ -26,12 +27,12 @@ set $term alacritty
 # set $menu dmenu_path | dmenu | xargs swaymsg exec --
 set $menu rofi -show combi -combi-modi "window,run,drun,ssh" -modi combi
 #set $nautilus exec nautilus
-
 set $lock swaylock -f -c 000000
 
-
+#
 ### Output configuration
 #
+# You can get the names of your outputs by running: swaymsg -t get_outputs
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 # chage the focus of montitor on sway launch
@@ -49,89 +50,34 @@ set $lock swaylock -f -c 000000
 # output LVDS-1 scale 1
 # output LVDS-1 bg $HOME/dotfiles/picture/architecture01.jpg  fill
 
-# focus output DP-2
-
-output DP-1 scale 1.5
-output DP-1 resolution 3440x1440 position 0,0
-#output eDP-1 resolution 800x1280 position 0,1440
-output eDP-1 disable
-# output DP-2 bg $HOME/dotfiles/picture/rust-rust.png  fill
-
-# output DP-2 bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-# output DP-2 bg $HOME/dotfiles/picture/hacker1.jpg  fill
-# output DP-2 bg $HOME/dotfiles/picture/jocker1.jpg  fill
-# output DP-2 bg $HOME/dotfiles/picture/architecture01.jpg  fill
-# output DP-2 bg $HOME/dotfiles/picture/01.jpg  fill
-
-# output eDP-1 bg $HOME/Pictures/k2/1776267.png  fill
-######output eDP-1 scale 1.5
-# output eDP-1 resolution 2560x1600 position 3440,0
-# output eDP-1 resolution 1080x1600 position 3440,0
-# output eDP-1 resolution 2560x1600 position 0,0
-# output eDP-1 resolution 1920x1080 position 0,0
-# output eDP-1 bg $HOME/dotfiles/picture/hacker2.jpg fill
-# output eDP-1 bg $HOME/dotfiles/picture/rust-rust.png fill
-# output eDP-1 bg $HOME/dotfiles/picture/screen01.jpg fill
-######output eDP-1 bg $HOME/dotfiles/picture/architecture01.jpg  fill
-# output eDP-1 pos 0 1080 res 32767x32767
+focus output <DP-1>
+output eDP-1 {
+  mode 800x1280@60Hz
+  position 0,1440
+  scale 1.0
+  #transform 90
+  background "/usr/local/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png" fill
+  #disable
+}
+output DP-1 {
+  mode 3440x1440
+  position 0,0
+  scale 1.5
+}
+#output DP-1 scale 1.5
+#output DP-1 resolution 3440x1440 position 0 0
+#output eDP-1 resolution 1280x800 position 0 1440
+#output eDP-1 disable
+#
+# Example configuration:
+#
+#   output HDMI-A-1 resolution 1920x1080 position 1920,0
+#
 # set $laptop <eDP-1>
 # bindswitch --reload --locked lid:on output $laptop disable
 # bindswitch --reload --locked lid:off output $laptop enable
 # eg:focus output <eDP-1>
 #
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
-# workspaces definition
-# workspace 1: Terminal output eDp-1
-# workspace 2: Web output DP-2
-# workspace 3: Music output DP-2
-### Output configuration
-#
-# Default wallpaper (more resolutions are available in /usr/local/share/backgrounds/sway/)
-# output "My Workstation" mode 1920x1080@60Hz position 1920,0
-output * bg /usr/local/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-
-# -----------------------------------------------
-# Sway Font Configuration
-# This affects window titles and the default swaybar.
-# -----------------------------------------------
-
-# Example: Using a programming favorite, JetBrains Mono, at size 10
-font pango:JetBrains Mono 10
-
-# If you need to use a font with symbols (like a Nerd Font)
-# font pango:FiraCode Nerd Font Mono 9
-
-#
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
-
-### Idle configuration
-#
-# Example configuration:
-#
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-#          before-sleep 'swaylock -f -c 000000'
-#
-# exec swayidle -w \
-#
-#          before-sleep 'swaylock -f -c 000000'
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-#          before-sleep 'swaylock -f -c 000000'
-#
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
-
 ### Input configuration
 #
 # Example configuration:
@@ -154,59 +100,58 @@ font pango:JetBrains Mono 10
 #        # repeat_delay 250
 #        # repeat_rate 45
 #    }
-#    input "1267:12600:MSFT0001:00_04F3:3138_Touchpad" {
-#        left_handed enabled
-#        tap enabled
-#        natural_scroll enabled
-#        dwt enabled
-#        accel_profile "flat"
-#        pointer_accel 0.5
-#    }
+input 7247:99:HS-HW186A-3B-US-01-21-_USB_Keyboard {
+  #xkb_layout "eu"
+  #####exchange Ctrl and Caps
+  xkb_options ctrl:swapcaps
+}
+input 9390:8211:RAPOO_Rapoo_2.4G_Wireless_Device_Mouse {
+  left_handed enable
+  natural_scroll enable
+}
 #
-#    input "1578:16641:MOSART_Semi._2.4G_Keyboard_Mouse" {
-#        left_handed enabled
-#        # tap enabled
-#        natural_scroll enabled
-#        dwt enabled
-#        accel_profile "flat"
-#        pointer_accel 0.5
-#    }
+# workspaces definition
 #
-#    input "7247:101:SIGMACHIP_Usb_Mouse" {
-#        left_handed enabled
-#        # tap enabled
-#        natural_scroll enabled
-#        dwt enabled
-#        accel_profile "flat"
-#        pointer_accel 0.5
-#    }
+workspace 8-Clutter output eDp-1
+# workspace 2: Web output DP-2
+# workspace 3: Music output DP-2
+### Output configuration
 #
-#    input "10077:2982:USB_OPTICAL_MOUSE" {
-#        left_handed enabled
-#        # tap enabled
-#        natural_scroll enabled
-#        dwt enabled
-#        accel_profile "flat"
-#        pointer_accel 0.5
-#    }
-#
-#    input "0:1336:USB_OPTICAL_MOUSE" {
-#        left_handed enabled
-#        # tap enabled
-#        natural_scroll enabled
-#        dwt enabled
-#        accel_profile "flat"
-#        pointer_accel 0.5
-#    }
-#    input "7119:5:USB_Optical_Mouse" {
-#        left_handed enabled
-#        # tap enabled
-#        natural_scroll enabled
-#        dwt enabled
-#        accel_profile "flat"
-#        pointer_accel 0.5
-#    }
+# Default wallpaper (more resolutions are available in /usr/local/share/backgrounds/sway/)
+# output "My Workstation" mode 1920x1080@60Hz position 1920,0
+#output * bg /usr/local/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
+# -----------------------------------------------
+# Sway Font Configuration
+# This affects window titles and the default swaybar.
+# -----------------------------------------------
+
+# Example: Using a programming favorite, JetBrains Mono, at size 10
+font pango:JetBrains Mono 10
+
+# If you need to use a font with symbols (like a Nerd Font)
+# font pango:FiraCode Nerd Font Mono 9
+#
+### Idle configuration
+#
+# Example configuration:
+#
+# exec swayidle -w \
+#          timeout 300 'swaylock -f -c 000000' \
+#          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+#          before-sleep 'swaylock -f -c 000000'
+#
+# exec swayidle -w \
+#
+#          before-sleep 'swaylock -f -c 000000'
+#          timeout 300 'swaylock -f -c 000000' \
+#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+#          before-sleep 'swaylock -f -c 000000'
+#
+# This will lock your screen after 300 seconds of inactivity, then turn off
+# your displays after another 300 seconds, and turn your screens back on when
+# resumed. It will also lock your screen before your computer goes to sleep.
+#
 ### Key bindings
 #
 # Basics:
@@ -232,6 +177,8 @@ font pango:JetBrains Mono 10
 
     # Reload the configuration file
     bindsym $mod+Shift+c reload
+
+    bindsym Mod4+Shift+l exec $lock
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
@@ -378,59 +325,57 @@ bindsym $mod+r mode "resize"
     # bindsym ctrl+g exec firefox https://ctext.org/zhs
 
     # volume controls
-    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-    bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-    bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-    bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
-    bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
-    bindsym XF86MonBrightnessUp exec brightnessctl set +5%
-    bindsym XF86AudioPlay exec playerctl play-pause
-    bindsym XF86AudioNext exec playerctl next
-    bindsym XF86AudioPrev exec playerctl previous
-    bindsym --locked XF86AudioPlay exec playerctl play-pause
-    bindsym XF86Search exec bemenu-run
-    bindsym XF86Music exec netease-cloud-music
+    #bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+    #bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+    #bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+    #bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+    #bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+    #bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+    #bindsym XF86AudioPlay exec playerctl play-pause
+    #bindsym XF86AudioNext exec playerctl next
+    #bindsym XF86AudioPrev exec playerctl previous
+    #bindsym --locked XF86AudioPlay exec playerctl play-pause
+    #bindsym XF86Search exec bemenu-run
+    #bindsym XF86Music exec netease-cloud-music
     #bindsym Print exec grim $HOME/screenshots/$(date +'%s_grim.png')
 
     # bindsym $mod+m exec swaylock -c '000000'
     #bindsym $mod+m exec swaylock -i $HOME/dotfiles/picture/rust-rust.png
-
-    # bindsym $mod+d exec bemenu-run
-    #bindsym $mod+d exec rofi -show combi -combi-modi "window,run,ssh" -modi combi
-    #bindsym Mod4+s exec st
-    # bindsym Mod4+x exec QT_QPA_PLATFORM=xcb flameshot gui
-    # bindsym Mod4+x exec WAYLAND_DISPLAY=x11 flameshot gui
-    #bindsym $mod+d exec $menu
-
-
 #
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
-bar {
-    position top
+#bar {
+#    position top
     #swaybar_command waybar
     # swaybar_command polybar
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %X'; do sleep 1; done
+#    status_command while date +'%Y-%m-%d %X'; do sleep 1; done
 
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
-}
+#    colors {
+#        statusline #ffffff
+        #background #323232
+#        background #000000
+#        inactive_workspace #32323200 #32323200 #5c5c5c
+#    }
+#}
   # Auto float apps
-    for_window [app_id="org.gnome.Nautilus"] floating enable
-    for_window [app_id="^xpad$"] floating enable
-    for_window [class="^GoldenDict$"] floating enable
+#    for_window [app_id="org.gnome.Nautilus"] floating enable
+#    for_window [app_id="^xpad$"] floating enable
+#    for_window [class="^GoldenDict$"] floating enable
     # for_window [class="netease-cloud-music"] floating enable
-    for_window [class="tanpopo"] floating enable
+#    for_window [class="tanpopo"] floating enable
     # for_window [title="Firefox - Sharing Indicator"] floating enable
 
 # Xwayland enable
 xwayland enable
+# -----------------------------------------------
+# Start the Waybar Status Bar
+# -----------------------------------------------
 
+# Ensure Waybar is launched only once when Sway starts
+# The 'exec' command ensures it runs outside the terminal
+exec waybar
 include /usr/local/etc/sway/config.d/*

@@ -36,7 +36,7 @@ if [ -d "$HOME/bin" ] ; then PATH="$HOME/bin:$PATH" ; fi
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/.local/bin" ] ; then PATH="$HOME/.local/bin:$PATH" ; fi
-PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+PATH="/usr/local/bin:/usr/local/sbin:$PATH:/hhhhh"
 #####input method framework
 #export GTK_IM_MODULE=fcitx5
 #export QT_IM_MODULE=fcitx5

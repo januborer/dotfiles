@@ -113,6 +113,7 @@ if status is-interactive
 
   ############ Export #############
   # #@###fcitx5
+
   export GTK_IM_MODULE=fcitx5
   export QT_IM_MODULE=fcitx5
   export XMODIFIERS="@im=fcitx5"
@@ -178,14 +179,15 @@ end
 
 
 ###########FUNCTIONS##########
-set PROXY_IP "192.168.68.236"
+set PROXY_IP "10.106.188.231"
+#set PROXY_IP "192.168.68.236"
 #set PROXY_IP "10.47.182.136"
-#set PROXY_SOCKS_PORT "1080"
-set PROXY_HTTP_PORT "8080"
-#set PROXY_SOCKS_TYPE "socks5h"
-set PROXY_HTTP_TYPE "http"
-#set PROXY_VALUE "$PROXY_SOCKS_TYPE://$PROXY_IP:$PROXY_SOCKS_PORT"
-set PROXY_VALUE "$PROXY_HTTP_TYPE://$PROXY_IP:$PROXY_HTTP_PORT"
+set PROXY_SOCKS_PORT "1080"
+#set PROXY_HTTP_PORT "8080"
+set PROXY_SOCKS_TYPE "socks5h"
+#set PROXY_HTTP_TYPE "http"
+set PROXY_VALUE "$PROXY_SOCKS_TYPE://$PROXY_IP:$PROXY_SOCKS_PORT"
+#set PROXY_VALUE "$PROXY_HTTP_TYPE://$PROXY_IP:$PROXY_HTTP_PORT"
 function proxy_on
   #set NO_PROXY "localhost,127.0.0.1,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16,.local,$PROXY_IP"
   set NO_PROXY "localhost,127.0.0.1"
@@ -224,6 +226,11 @@ function proxy_off
   #git config --global --unset https.proxy
   echo -e "\nProxy off"
 end
+
+
+#if string match -q "$TTY" "/dev/tty1" && string match -q "USER" "borer"
+#  exec sway -c .config/sway/config
+#end
 
 
 
