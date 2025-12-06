@@ -6,7 +6,7 @@ My FreeBSD+Sway profiles
 
 **The Following Softwares should be installed**
 
-tmux,neovim,fish,exa,sway,swaylock,alacritty,setxkbmap,grim,slurp,rofi-wayland,yazi,bash(Used for tmux),wf-recorder,swaybar
+tmux,neovim,fish,exa,sway,swaylock,alacritty,grim,slurp,rofi-wayland,yazi,bash(Used for tmux),wf-recorder,swaybar
 
 ## Install
 

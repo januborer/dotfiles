@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<opml version="1.0">
+    <head>
+        <title>Generated from bulletty</title>
+        <url>https://github.com/CrociDB/bulletty</url>
+    </head>
+    <body>
+        <outline text="General" title="General">
+      <outline text="Hacker News" title="Hacker News" description="Links for the intellectually curious, ranked by readers." xmlUrl="https://news.ycombinator.com/rss" htmlUrl="https://news.ycombinator.com/" type="rss" />
+      <outline text="Lobsters" title="Lobsters" description="Lobsters" xmlUrl="https://lobste.rs/rss" htmlUrl="https://lobste.rs/" type="rss" />
+        </outline>
+        <outline text="Test" title="Test">
+      <outline text="Bruno Croci" title="Bruno Croci" description="Bruno Croci" xmlUrl="https://crocidb.com/index.xml" htmlUrl="https://crocidb.com/" type="rss" />
+        </outline>
+    </body>
+</opml>

@@ -1,4 +1,6 @@
 #/bin/bash
+#browsh,bulletty(RSS reader),atuin,mdcat,mdbook,yazi,bottom,bore,dust,ffsend
+#
 # ntfs-3g
 nfs-utils
 slock
@@ -28,7 +30,6 @@ vlc
 nautilus
 evince
 audacity
-xclip
 calibre
 bore
 grim
@@ -92,8 +93,6 @@ cargo install kmon
 #Manage your GnuPG keys with easel
 cargo install gpg-tui
 
-#A TUI system monitor written in Rust
-cargo install ytop
 #sort of like top or htop but with zoom-able charts CPU.GPU,network,and disk usage
 cargo install zenith
 #Yet another cross-platform graphical process/system monitor.(btm)
@@ -142,6 +141,7 @@ cargo install procs
 
 #onefetch
 cargo install onefetch
+
 
 #USAGE
 #bottom(btm),kmon,bandwhich,gitui,joshuto,mkbook,battleship-rs,minesweep,termscp,pros,onefetch,bat,fd,repg,dust,goband,ytui-music,broot(br),oxker,trippy,gping,kdash,termchat,
