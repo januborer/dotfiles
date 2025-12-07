@@ -10,7 +10,7 @@
 input * xkb_rules evdev
 #exec --no-startup-id fcitx5 -r
 #exec fcitx5 -d
-exec fcitx5
+#exec fcitx5
 set $mod Mod1
 # Home row direction keys, like vim
 set $left h
@@ -63,6 +63,7 @@ output DP-1 {
   mode 3440x1440
   position 0,0
   scale 1.5
+  background "/usr/local/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png" fill
 }
 #output DP-1 scale 1.5
 #output DP-1 resolution 3440x1440 position 0 0
@@ -105,8 +106,16 @@ input 7247:99:HS-HW186A-3B-US-01-21-_USB_Keyboard {
   #####exchange Ctrl and Caps
   xkb_options ctrl:swapcaps
 }
+input 1:1:AT_keyboard {
+  #xkb_layout "eu"
+  #####exchange Ctrl and Caps
+  xkb_options ctrl:swapcaps
+}
 input 9390:8211:RAPOO_Rapoo_2.4G_Wireless_Device_Mouse {
   left_handed enable
+  natural_scroll enable
+}
+input 1267:12600:MSFT0001:00_04F3:3138_TouchPad {
   natural_scroll enable
 }
 #
@@ -158,6 +167,9 @@ font pango:JetBrains Mono 10
 #
     # Start a terminal
     bindsym $mod+Return exec $term
+
+    #start the thunderbird
+    bindsym $mod+t exec $term
 
     # Kill focused window
     bindsym $mod+Shift+q kill
@@ -219,7 +231,7 @@ font pango:JetBrains Mono 10
     bindsym $mod+6 workspace 6-Enjoy
     bindsym $mod+7 workspace 7-Communicate
     bindsym $mod+8 workspace 8-Clutter
-    bindsym $mod+9 workspace number 9
+    bindsym $mod+9 workspace number 9-AI
     bindsym $mod+0 workspace number 10
     # Move focused container to workspace
     bindsym $mod+Shift+1 move container to workspace 1-CS
@@ -230,7 +242,7 @@ font pango:JetBrains Mono 10
     bindsym $mod+Shift+6 move container to workspace 6-Enjoy
     bindsym $mod+Shift+7 move container to workspace 7-Communicate
     bindsym $mod+Shift+8 move container to workspace 8-Clutter
-    bindsym $mod+Shift+9 move container to workspace number 9
+    bindsym $mod+Shift+9 move container to workspace number 9-AI
     bindsym $mod+Shift+0 move container to workspace number 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.

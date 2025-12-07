@@ -227,11 +227,21 @@ function proxy_off
   echo -e "\nProxy off"
 end
 
+###yazi####
+function y
+  set tmp (mktemp -t "yazi-cwd.XXXXXX")
+  yazi $argv --cwd-file="$tmp"
+  if read -z cwd < "$tmp"; and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+  builtin cd -- "$cwd"
+  end
+  rm -f -- "$tmp"
+end
 
 #if string match -q "$TTY" "/dev/tty1" && string match -q "USER" "borer"
 #  exec sway -c .config/sway/config
 #end
 
-
+## prevent create *.core
+ulimit -c 0
 
 #############################

@@ -2,13 +2,19 @@
 
 set -x
 
+##Tui
 ln -s ~/dotfiles/.config/nvim ~/.config/nvim
 ln -s ~/dotfiles/.config/fish ~/.config/fish
+ln -s ~/dotfiles/.config/yazi ~/.config/yazi
 ln -s ~/dotfiles/.config/alacritty ~/.confg/alacritty
 ln -s ~/dotfiles/.config/tmux/.tmux.conf ~/.tmux.conf
-ln -s ~/dotfiles/.config/sway/config ~/.config/sway/config
-ln -s ~/dotfiles/freebsd/.profile ~/.profile
 ln -s ~/dotfiles/bin ~/bin
+
+##Sway
+ln -s ~/dotfiles/.config/sway/config ~/.config/sway/config
 ln -s ~/dotfiles/.config/sway/swaybar ~/.config/waybar
+
+##FreeBSD
+ln -s ~/dotfiles/freebsd/.profile ~/.profile
 
 #############################################################
