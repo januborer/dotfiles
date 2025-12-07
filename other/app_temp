@@ -37,6 +37,7 @@ feh
 alacritty
 navi
 rnote
+gcc
 
 # An interactive cheatsheet tool for the command-line 
 cargo install navi
