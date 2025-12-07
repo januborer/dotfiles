@@ -112,15 +112,10 @@ if status is-interactive
   # Commands to run in interactive sessions can go here
 
   ############ Export #############
-  # #@###fcitx5
-
-  export GTK_IM_MODULE=fcitx5
-  export QT_IM_MODULE=fcitx5
-  export XMODIFIERS="@im=fcitx5"
-  export GTK_IM_MODULE DEFAULT=fcitx5
-  export QT_IM_MODULE DEFAULT=fcitx5
-  export XMODIFIERS DEFAULT=@im=fcitx5
   export PATH="$HOME/.cargo/bin:$HOME/dotfiles/bin:$PATH:/usr/local/go/bin:/var/lib/snapd/snap/bin"
+
+  export EDITOR=nvim
+  export PAGER=less
 
   ########## Aliases ##########
   # my-recent-study-book

@@ -38,12 +38,15 @@ if [ -d "$HOME/bin" ] ; then PATH="$HOME/bin:$PATH" ; fi
 if [ -d "$HOME/.local/bin" ] ; then PATH="$HOME/.local/bin:$PATH" ; fi
 PATH="/usr/local/bin:/usr/local/sbin:$PATH:/hhhhh"
 #####input method framework
-#export GTK_IM_MODULE=fcitx5
-#export QT_IM_MODULE=fcitx5
-#export XMODIFIERS="@im=fcitx5"
-#export GTK_IM_MODULE DEFAULT=fcitx5
-#export QT_IM_MODULE DEFAULT=fcitx5
-#export XMODIFIERS DEFAULT=@im=fcitx5
+export GTK_IM_MODULE=fcitx5
+export QT_IM_MODULE=fcitx5
+export XMODIFIERS="@im=fcitx5"
+export GTK_IM_MODULE DEFAULT=fcitx5
+export QT_IM_MODULE DEFAULT=fcitx5
+export SDL_IM_MODULE=fcitx5
+export WAYLAND_IM_MODULE=fcitx5
+export GLFW_IM_MODULE=ibus
+export XMODIFIERS DEFAULT=@im=fcitx5
 
 export TERM=xterm-color
 
