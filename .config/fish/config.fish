@@ -112,7 +112,7 @@ if status is-interactive
   # Commands to run in interactive sessions can go here
 
   ############ Export #############
-  export PATH="$HOME/.cargo/bin:$HOME/dotfiles/bin:$PATH:/usr/local/go/bin:/var/lib/snapd/snap/bin"
+  export PATH="/usr/local/bin:$HOME/.cargo/bin:$HOME/dotfiles/bin:$PATH:/usr/local/go/bin:/var/lib/snapd/snap/bin"
 
   export EDITOR=nvim
   export PAGER=less
