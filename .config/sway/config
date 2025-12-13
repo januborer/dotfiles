@@ -63,7 +63,7 @@ output DP-1 {
   mode 3440x1440
   position 0,0
   scale 1.5
-  background "$HOME/dotfiles/other/wallpaper.png" fill
+  background "/usr/local/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png" fill
 }
 #output DP-1 scale 1.5
 #output DP-1 resolution 3440x1440 position 0 0

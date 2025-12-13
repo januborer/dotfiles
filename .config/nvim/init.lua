@@ -5,14 +5,15 @@
 -- is called; otherwise, it will default to "\"
 vim.g.mapleader = ","
 vim.g.localleader = "\\"
--- IMPORTS
-require("config.lazy")
- -- Options
+-- Core
+require("core.lazy")
+require("core.lsp")
+
+-- Options
 require("config.options")
 -- Variables
 require("config.variables")
 -- Keymaps
 require("config.keymaps")
 -- Autocomds
-require('config.autocmds')
-vim.lsp.enable('rust_analyzer')
+require("config.autocmds")
