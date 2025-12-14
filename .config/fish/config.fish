@@ -118,10 +118,11 @@ if status is-interactive
   export PAGER=less
 
   ########## Aliases ##########
-  # my-recent-study-book
   alias tnew="tmux new -s"
   alias tto="tmux attach -t"
   alias vim="nvim"
+  alias trans="trans -b -t zh"
+  alias pdfr="zathura"
   #alias man="vimman"
   alias ls="exa"
   alias my_audio=pulsemixer

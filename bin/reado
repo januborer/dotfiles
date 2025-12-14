@@ -1,0 +1,44 @@
+#!/bin/sh
+#
+# 脚本名称: reado
+# 描述: 使用 zathura 打开指定的 PDF 文件，并进行基本的路径和存在性检查。
+
+# 检查是否提供了文件路径
+if [ -z "$1" ]; then
+    echo "用法: $0 <PDF文件路径>"
+    echo "示例: $0 /home/developer/docs/report.pdf"
+    exit 1
+fi
+
+PDF_PATH="$1"
+
+# 检查 zathura 是否安装
+if ! command -v zathura > /dev/null; then
+    echo "错误: 未找到 zathura 命令。请先安装 zathura。"
+    exit 1
+fi
+
+# 检查文件是否存在
+if [ ! -f "$PDF_PATH" ]; then
+    echo "错误: 文件不存在或无法访问: $PDF_PATH"
+    exit 1
+fi
+
+# 检查文件扩展名，确保它是 PDF
+# 这里的检查是可选的，因为 zathura 可以处理多种文件，但为了严谨性保留
+FILE_EXTENSION=$(echo "$PDF_PATH" | awk -F. '{print $NF}' | tr '[:upper:]' '[:lower:]')
+
+if [ "$FILE_EXTENSION" != "pdf" ]; then
+    echo "警告: 文件扩展名不是 .pdf。正在尝试使用 zathura 打开..."
+fi
+
+# 使用 zathura 打开文件
+# 对于简单的启动，也可以使用 'zathura "$PDF_PATH" &' 来在后台启动，然后脚本立即退出。
+# =========================================================
+# 1. 'zathura "$PDF_PATH"' 启动程序
+# 2. '&' 符号将程序放入后台
+zathura "$PDF_PATH" &
+# =========================================================
+
+# 脚本到此结束，它会在 zathura 启动后立即退出
+exit 0

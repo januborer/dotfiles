@@ -10,6 +10,7 @@ input * xkb_rules evdev
 #exec --no-startup-id fcitx5 -r
 #exec fcitx5 -d
 exec "fcitx5 -d"
+exec "mako --width 400 --padding 10 --border-size 2 "
 # Logo key. Use Mod1 for Alt.
 set $mod Mod1
 # Home row direction keys, like vim
@@ -230,8 +231,8 @@ font pango:JetBrains Mono 10
     bindsym $mod+5 workspace 5-Books
     bindsym $mod+6 workspace 6-Enjoy
     bindsym $mod+7 workspace 7-Communicate
-    bindsym $mod+8 workspace 8-Clutter
-    bindsym $mod+9 workspace number 9-AI
+    bindsym $mod+8 workspace 8-AI
+    bindsym $mod+9 workspace 9-Clutter
     bindsym $mod+0 workspace number 10
     # Move focused container to workspace
     bindsym $mod+Shift+1 move container to workspace 1-CS
@@ -241,8 +242,8 @@ font pango:JetBrains Mono 10
     bindsym $mod+Shift+5 move container to workspace 5-Books
     bindsym $mod+Shift+6 move container to workspace 6-Enjoy
     bindsym $mod+Shift+7 move container to workspace 7-Communicate
-    bindsym $mod+Shift+8 move container to workspace 8-Clutter
-    bindsym $mod+Shift+9 move container to workspace number 9-AI
+    bindsym $mod+Shift+8 move container to workspace 8-AI
+    bindsym $mod+Shift+9 move container to workspace 9-Clutter
     bindsym $mod+Shift+0 move container to workspace number 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
@@ -332,7 +333,9 @@ bindsym $mod+r mode "resize"
 # my bind keys
 #
     # some of my binds
-    bindsym ctrl+g exec QT_QPA_PLATFORM=xcb goldendict
+    # bindsym ctrl+g exec QT_QPA_PLATFORM=xcb goldendict
+    # - 假设您的脚本名为 sway-translate-clip.sh 并且在 $PATH 中
+    bindsym ctrl+g exec --no-startup-id sway_translate_clip
     # bindsym ctrl+g WAYLAND_DISPLAY=x11 rustdesk
     # bindsym ctrl+g exec firefox https://ctext.org/zhs
 

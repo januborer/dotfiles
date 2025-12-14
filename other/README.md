@@ -21,6 +21,8 @@ yazi(file,nerd-fonts,7-zip,jq,poppler,fd,ripgrep,fzf,zoxide,resvg,ImageMagick,wl
 bash(Used for tmux)
 wf-recorder
 thunderbird
+zathura(pdf reader operate like vim)
+mako(sway notify daemon),libnotify(use it's notify-send for translate-shell)
 
 ## Install
 

@@ -16,4 +16,7 @@ ln -s ~/.dotfiles/.config/sway/swaybar ~/.config/waybar
 ##FreeBSD
 ln -s ~/.dotfiles/.config/freebsd/.profile ~/.profile
 
+##Other
+ln -s ~/.dotfiles/.config/fcitx5 ~/.config/fcitx5
+
 #############################################################
