@@ -1,18 +1,19 @@
-# set -x DOTFILES $HOME/.dotfiles
+set -x DOTFILES $HOME/.dotfiles
 #
-# set -x PATH \
-#     $PATH \
-#     $HOME/.cargo/bin \
-#     $HOME/dotfiles/bin \
-#     $HOME/.local/bin \
-#     $DOTFILES/bin \
-#     /usr/local/bin \
-#     /usr/local/sbin \
-#     /usr/bin \
-#     /bin \
-#     /usr/sbin \
-#     /sbin
-#
+set -x PATH \
+    $PATH \
+    $HOME/.cargo/bin \
+    $HOME/.yarn/bin \
+    $HOME/.npm-global/bin \
+    $HOME/bin \
+    $HOME/.local/bin \
+    $DOTFILES/bin \
+    /usr/local/bin \
+    /usr/local/sbin \
+    /usr/bin \
+    /bin \
+    /usr/sbin \
+    /sbin
 # set -x GOPATH $HOME/GoWork
 # set -x PATH $PATH $GOPATH/bin
 #
@@ -112,7 +113,6 @@ if status is-interactive
   # Commands to run in interactive sessions can go here
 
   ############ Export #############
-  export PATH="/usr/local/bin:$HOME/.cargo/bin:$HOME/dotfiles/bin:$PATH:/usr/local/go/bin:/var/lib/snapd/snap/bin"
 
   export EDITOR=nvim
   export PAGER=less
