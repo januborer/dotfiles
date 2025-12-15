@@ -28,6 +28,10 @@ else
     # *→ 中文
     TRANSLATION="$(trans -b :en "$INPUT_TEXT" 2>/dev/null)"
 fi
+# 如果上面trans翻译成功，那么将翻译结果赋值给wl-copy
+if [ $? = 0 ] ; then
+  echo "$TRANSLATION" | wl-copy
+fi
 
 # 使用 notify-send 显示结果
 # -i info: 使用信息图标
