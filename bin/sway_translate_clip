@@ -8,16 +8,17 @@ fi
 
 # 1. 从 Wayland 剪贴板获取内容 (使用 -p 参数读取主选择区 Primary Selection)
 # 对于大多数“选中即复制”的操作，读取 Primary Selection (主选择区) 更加即时。
-# 您也可以尝试 -c 来读取 Clipboard Selection (剪贴板)。
-INPUT_TEXT=$(wl-paste -n -p)
+# 您也可以尝试 -c 来读取 Clipboard Selection (剪贴板)，默认就是-c
+# INPUT_TEXT=$(wl-paste -n -p)
+INPUT_TEXT=$(wl-paste -n)
 
 if [ -z "$INPUT_TEXT" ]; then
     notify-send -i info -t 5000 "翻译提示" "未检测到文本内容。"
     exit 0
 fi
 
-# 限制输入文本长度，避免通知内容过长 (例如只取前100个字符用于通知标题)
-PREVIEW=$(echo "$INPUT_TEXT" | head -c 100)
+# 限制输入文本长度，避免通知内容过长 (例如只取前10个字符用于通知标题)
+PREVIEW=$(echo "$INPUT_TEXT" | head -c 10)
 
 # 2. 执行翻译
 # -brief: 简洁模式
@@ -27,5 +28,5 @@ TRANSLATION=$(echo "$INPUT_TEXT" | trans -brief -t zh)
 
 # 3. 使用 notify-send 显示结果
 # -i info: 使用信息图标
-# -t 5000: 停留 5000 毫秒 (5秒)
-notify-send -i info -t 50000 "原文: $PREVIEW..." "$TRANSLATION"
+# -t 20000: 停留 20000 毫秒 (20秒)
+notify-send -i info -t 20000 "原文: $PREVIEW..." "$TRANSLATION"

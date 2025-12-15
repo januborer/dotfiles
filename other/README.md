@@ -17,12 +17,14 @@ alacritty
 grim
 slurp
 rofi-wayland
+wl-clipboard
 yazi(file,nerd-fonts,7-zip,jq,poppler,fd,ripgrep,fzf,zoxide,resvg,ImageMagick,wl-clipboard)
 bash(Used for tmux)
 wf-recorder
 thunderbird
-zathura(pdf reader operate like vim)
-mako(sway notify daemon),libnotify(use it's notify-send for translate-shell)
+zathura(pdf reader operate like vim,support mult file format)
+mako(sway notify daemon),libnotify(use it's notify-send for translate-shell),gawk(use for trans)
+gnome-dictionary(install dictd and config it in /etc/rc.conf (dict_enable="YES"))
 
 ## Install
 

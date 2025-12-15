@@ -10,7 +10,7 @@ input * xkb_rules evdev
 #exec --no-startup-id fcitx5 -r
 #exec fcitx5 -d
 exec "fcitx5 -d"
-exec "mako --width 400 --padding 10 --border-size 2 "
+exec "mako --width 400 --height 10000 --padding 10 --border-size 2 "
 # Logo key. Use Mod1 for Alt.
 set $mod Mod1
 # Home row direction keys, like vim
