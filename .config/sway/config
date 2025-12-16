@@ -10,7 +10,13 @@ input * xkb_rules evdev
 #exec --no-startup-id fcitx5 -r
 #exec fcitx5 -d
 exec "fcitx5 -d"
-exec "mako --width 400 --height 10000 --padding 10 --border-size 2 "
+
+# FF	100%	0%	完全不透明
+# C0	75%	25%	较高不透明度
+# 80	50%	50%	当前设置 (半透明)
+# 40	25%	75%	非常透明
+# 00	0%	100%	完全透明（文字可能与背景重叠
+exec "mako --background-color '#000000E0' --text-color '#FFFFFF' --width 500 --height 10000 --margin 10 --padding 15 --border-size 1 --border-color '#444444' --border-radius 8 --font 'sans-serif 11' --max-visible 5 --default-timeout 30000 --anchor top-center"
 # Logo key. Use Mod1 for Alt.
 set $mod Mod1
 # Home row direction keys, like vim

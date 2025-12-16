@@ -23,7 +23,7 @@ bash(Used for tmux)
 wf-recorder
 thunderbird
 zathura(pdf reader operate like vim,support mult file format)
-mako(sway notify daemon),libnotify(use it's notify-send for translate-shell),gawk(use for trans)
+mako(sway notify daemon),libnotify(use it's notify-send for translate-shell),gawk(use for trans),pcre2grep(used for sway_translate_clip)
 gnome-dictionary(install dictd and config it in /etc/rc.conf (dict_enable="YES"))
 
 ## Install
