@@ -16,7 +16,7 @@ exec "fcitx5 -d"
 # 80	50%	50%	当前设置 (半透明)
 # 40	25%	75%	非常透明
 # 00	0%	100%	完全透明（文字可能与背景重叠
-exec "mako --background-color '#000000E0' --text-color '#FFFFFF' --width 500 --height 10000 --margin 10 --padding 15 --border-size 1 --border-color '#444444' --border-radius 8 --font 'sans-serif 11' --max-visible 5 --default-timeout 30000 --anchor top-center"
+exec "mako --background-color '#00000080' --text-color '#FFFFFF' --width 500 --height 10000 --margin 10 --padding 15 --border-size 1 --border-color '#444444' --border-radius 8 --font 'sans-serif 11' --max-visible 5 --default-timeout 50000 --anchor top-center"
 # Logo key. Use Mod1 for Alt.
 set $mod Mod1
 # Home row direction keys, like vim
@@ -341,7 +341,8 @@ bindsym $mod+r mode "resize"
     # some of my binds
     # bindsym ctrl+g exec QT_QPA_PLATFORM=xcb goldendict
     # - 假设您的脚本名为 sway-translate-clip.sh 并且在 $PATH 中
-    bindsym ctrl+g exec --no-startup-id sway_translate_clip
+    bindsym ctrl+g exec --no-startup-id sway_translate_clip "word"
+    bindsym ctrl+shift+g exec --no-startup-id sway_translate_clip
     # bindsym ctrl+g WAYLAND_DISPLAY=x11 rustdesk
     # bindsym ctrl+g exec firefox https://ctext.org/zhs
 

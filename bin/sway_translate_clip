@@ -6,12 +6,24 @@ if ! command -v wl-paste > /dev/null || ! command -v trans > /dev/null || ! comm
     exit 1
 fi
 
+if [ "$1" = "word" ]; then
+  INPUT_TOOL="rofi -dmenu -i"
+  INPUT_TEXT=$(echo "" | $INPUT_TOOL -p "please input" -format s)
+  STATUS_ROFI=$? # 捕获 rofi 的退出状态码
+  if [ "$STATUS_ROFI" -ne 0 ] || [ -z "$INPUT_TEXT" ]; then
+    # notify-send "翻译取消" "用户未输入文本或取消操作。"
+    notify-send -u critical -t 5000 "cancle"
+    exit 0
+  fi
+else
+  INPUT_TEXT=$(wl-paste | sed -e 's/^[ \t\n]*//g' -e 's/[ \t\n]*$//g' -e 's/\n/ /g')
+fi
 # 从 Wayland 剪贴板获取内容 (使用 -p 参数读取主选择区 Primary Selection)
 # 对于大多数“选中即复制”的操作，读取 Primary Selection (主选择区) 更加即时。
 # 您也可以尝试 -c 来读取 Clipboard Selection (剪贴板)，默认就是-c
 # INPUT_TEXT=$(wl-paste -n -p)
 # INPUT_TEXT=$(wl-paste -n)
-INPUT_TEXT=$(wl-paste | sed -e 's/^[ \t\n]*//g' -e 's/[ \t\n]*$//g' -e 's/\n/ /g')
+
 
 if [ -z "$INPUT_TEXT" ]; then
     notify-send -i info -t 5000 "翻译提示" "未检测到文本内容。"
@@ -25,6 +37,7 @@ fi
 # if echo "$INPUT_TEXT" | grep -q '[\xe4-\xe9]' ; then
 if echo "$INPUT_TEXT" | pcre2grep -q  '\p{Han}'; then
     # 中文 → 英文
+    # TRANSLATION="$(trans -b -sp :en "$INPUT_TEXT" 2>/dev/null)"
     TRANSLATION="$(trans -b :en "$INPUT_TEXT" 2>/dev/null)"
     TRANS_STATUS=$?
 else
@@ -33,7 +46,7 @@ else
     TRANS_STATUS=$?
 fi
 # 如果上面trans翻译成功，那么将翻译结果赋值给wl-copy
-if [ "$TRANS_STATUS" -eq 0 ] ; then
+if [ "$TRANS_STATUS" -eq 0 ] && [ "$1" != "word" ]; then
   echo "$TRANSLATION" | wl-copy
 fi
 # 使用 notify-send 显示结果
