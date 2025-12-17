@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# 'exec' 命令会用 zathura 进程替换当前 shell 脚本进程，节省资源。
+exec dbus-run-session sway -c ~/.config/sway/config --unsupported-gpu

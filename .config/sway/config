@@ -58,6 +58,9 @@ set $lock swaylock -f -c 000000
 # output LVDS-1 bg $HOME/dotfiles/picture/architecture01.jpg  fill
 
 focus output <DP-1>
+output * {
+  background "/usr/local/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png" fill
+}
 output eDP-1 {
   mode 800x1280@60Hz
   position 0,1440
@@ -108,21 +111,9 @@ output DP-1 {
 #        # repeat_delay 250
 #        # repeat_rate 45
 #    }
-input 7247:99:HS-HW186A-3B-US-01-21-_USB_Keyboard {
-  #xkb_layout "eu"
-  #####exchange Ctrl and Caps
-  xkb_options ctrl:swapcaps
-}
-input 1:1:AT_keyboard {
-  #xkb_layout "eu"
-  #####exchange Ctrl and Caps
-  xkb_options ctrl:swapcaps
-}
-input 9390:8211:RAPOO_Rapoo_2.4G_Wireless_Device_Mouse {
+input * {
+  xkb_options ctrl:nocaps
   left_handed enable
-  natural_scroll enable
-}
-input 1267:12600:MSFT0001:00_04F3:3138_TouchPad {
   natural_scroll enable
 }
 #

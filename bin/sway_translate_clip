@@ -8,11 +8,11 @@ fi
 
 if [ "$1" = "word" ]; then
   INPUT_TOOL="rofi -dmenu -i"
-  INPUT_TEXT=$(echo "" | $INPUT_TOOL -p "please input" -format s)
+  INPUT_TEXT=$(echo "" | $INPUT_TOOL -p "Input" -format s)
   STATUS_ROFI=$? # 捕获 rofi 的退出状态码
   if [ "$STATUS_ROFI" -ne 0 ] || [ -z "$INPUT_TEXT" ]; then
     # notify-send "翻译取消" "用户未输入文本或取消操作。"
-    notify-send -u critical -t 5000 "cancle"
+    notify-send -u critical -t 5000 "cancle translate."
     exit 0
   fi
 else
