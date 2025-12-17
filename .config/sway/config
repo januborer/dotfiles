@@ -32,7 +32,7 @@ set $term alacritty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 # set $menu dmenu_path | dmenu | xargs swaymsg exec --
-set $menu rofi -show combi -combi-modi "window,run,drun,ssh" -modi combi
+set $menu rofi -show combi -combi-modi "window,run,drun,ssh" -modi combi -show-icons
 #set $nautilus exec nautilus
 set $lock swaylock -f -c 000000
 
@@ -60,6 +60,7 @@ set $lock swaylock -f -c 000000
 focus output <DP-1>
 output * {
   background "/usr/local/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png" fill
+  scale 1.5
 }
 output eDP-1 {
   mode 800x1280@60Hz
@@ -116,6 +117,10 @@ input * {
   left_handed enable
   natural_scroll enable
 }
+# input 9390:8211:RAPOO_Rapoo_2.4G_Wireless_Device_Mouse {
+# }
+# input 1267:12600:MSFT0001:00_04F3:3138_TouchPad {
+# }
 #
 # workspaces definition
 #

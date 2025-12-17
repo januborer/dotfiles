@@ -5,17 +5,28 @@ if ! command -v wl-paste > /dev/null || ! command -v trans > /dev/null || ! comm
     notify-send -u critical -t 5000 "翻译错误" "缺少依赖工具：wl-paste, translate-shell (trans) 或 notify-send。"
     exit 1
 fi
-
 if [ "$1" = "word" ]; then
-  INPUT_TOOL="rofi -dmenu -i"
-  INPUT_TEXT=$(echo "" | $INPUT_TOOL -p "Input" -format s)
-  STATUS_ROFI=$? # 捕获 rofi 的退出状态码
-  if [ "$STATUS_ROFI" -ne 0 ] || [ -z "$INPUT_TEXT" ]; then
+  NOTIFY_TOOL="notify-send -i info -t 5000"
+  # rofi
+  # INPUT_TOOL="rofi -dmenu -normal-window -i"
+  # INPUT_TEXT=$(echo "" | $INPUT_TOOL -p "Input" -format s)
+  # wofi
+  # INPUT_TOOL="wofi --dmenu --lines 0"
+  # INPUT_TEXT=$(echo "" | $INPUT_TOOL --prompt "Input" --width 400)
+  # fuzzel
+  INPUT_TOOL="fuzzel"
+  INPUT_TEXT=$(echo "" | "$INPUT_TOOL" --dmenu --lines=0 --width=40 --background=282a36ff --text=f8f8f2ff --border-width=2 --border-color=bd93f9ff --selection-text=8be9fdff)
+  echo "$INPUT_TEXT"
+  # 捕获 rofi/wofi/fuzzel 的退出状态码
+  STATUS_INPUT=$?
+  echo "$INPUT_TEXT"
+  if [ "$STATUS_INPUT" -ne 0 ] || [ -z "$INPUT_TEXT" ]; then
     # notify-send "翻译取消" "用户未输入文本或取消操作。"
     notify-send -u critical -t 5000 "cancle translate."
     exit 0
   fi
 else
+  NOTIFY_TOOL="notify-send -i info -t 50000"
   INPUT_TEXT=$(wl-paste | sed -e 's/^[ \t\n]*//g' -e 's/[ \t\n]*$//g' -e 's/\n/ /g')
 fi
 # 从 Wayland 剪贴板获取内容 (使用 -p 参数读取主选择区 Primary Selection)
@@ -34,15 +45,16 @@ fi
 # PREVIEW=$(echo "$INPUT_TEXT" | head -c 10)
 #
 #判断是否为中文
+# -e 指定翻译引擎，auto是google，可以使用trans -list-engines查看有哪些engines
 # if echo "$INPUT_TEXT" | grep -q '[\xe4-\xe9]' ; then
 if echo "$INPUT_TEXT" | pcre2grep -q  '\p{Han}'; then
     # 中文 → 英文
     # TRANSLATION="$(trans -b -sp :en "$INPUT_TEXT" 2>/dev/null)"
-    TRANSLATION="$(trans -b :en "$INPUT_TEXT" 2>/dev/null)"
+    TRANSLATION="$(trans -e bing -b :en "$INPUT_TEXT" 2>/dev/null)"
     TRANS_STATUS=$?
 else
     # *→ 中文
-    TRANSLATION="$(trans -b :zh "$INPUT_TEXT" 2>/dev/null)"
+    TRANSLATION="$(trans -e bing -b :zh "$INPUT_TEXT" 2>/dev/null)"
     TRANS_STATUS=$?
 fi
 # 如果上面trans翻译成功，那么将翻译结果赋值给wl-copy
@@ -53,4 +65,4 @@ fi
 # -i info: 使用信息图标
 # -t 20000: 停留 20000 毫秒 (20秒)
 # notify-send -i info -t 20000 "原文: $PREVIEW..." "$TRANSLATION"
-notify-send -i info "Origin: $INPUT_TEXT" ">>>: $TRANSLATION"
+$NOTIFY_TOOL "Origin: $INPUT_TEXT" ">>>: $TRANSLATION"
