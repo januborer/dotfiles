@@ -1,4 +1,5 @@
 #!/bin/sh
-
+#/etc/rc.conf 开启 kld_list="nvidia-drm"
+#/boot/loader.conf 开启设置 hw.nvidiadrm.modeset="1"
 # 'exec' 命令会用 zathura 进程替换当前 shell 脚本进程，节省资源。
-exec dbus-run-session sway -c ~/.config/sway/config --unsupported-gpu
+exec dbus-run-session sway -c ~/.config/sway/config --unsupported-gpu 2>> $HOME/temp/errorlogs/nvidia_swayerr.log

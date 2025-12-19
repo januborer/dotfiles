@@ -18,6 +18,7 @@ doit() {
 
   ##Other
   [ -e ~/.config/fcitx5 ] && rm -rf ~/.config/fcitx5; ln -s ~/.dotfiles/.config/fcitx5 ~/.config/fcitx5
+  [ -e ~/temp/errorlogs ] && rm -rf ~/temp/errorlogs; ln -s ~/.dotfiles/other/errorlogs ~/temp/errorlogs
 }
 
 # exec

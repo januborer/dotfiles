@@ -16,10 +16,8 @@ if [ "$1" = "word" ]; then
   # fuzzel
   INPUT_TOOL="fuzzel"
   INPUT_TEXT=$(echo "" | "$INPUT_TOOL" --dmenu --lines=0 --width=40 --background=282a36ff --text=f8f8f2ff --border-width=2 --border-color=bd93f9ff --selection-text=8be9fdff)
-  echo "$INPUT_TEXT"
   # 捕获 rofi/wofi/fuzzel 的退出状态码
   STATUS_INPUT=$?
-  echo "$INPUT_TEXT"
   if [ "$STATUS_INPUT" -ne 0 ] || [ -z "$INPUT_TEXT" ]; then
     # notify-send "翻译取消" "用户未输入文本或取消操作。"
     notify-send -u critical -t 5000 "cancle translate."
@@ -41,6 +39,9 @@ if [ -z "$INPUT_TEXT" ]; then
     exit 0
 fi
 
+GOOGLE_ENGINE_TOOL="trans -e google -brief"
+BING_ENGINE_TOOL="trans -e bing -brief"
+YANDEX_ENGINE_TOOL="trans -e yandex -brief"
 # 限制输入文本长度，避免通知内容过长 (例如只取前10个字符用于通知标题)
 # PREVIEW=$(echo "$INPUT_TEXT" | head -c 10)
 #
@@ -50,11 +51,15 @@ fi
 if echo "$INPUT_TEXT" | pcre2grep -q  '\p{Han}'; then
     # 中文 → 英文
     # TRANSLATION="$(trans -b -sp :en "$INPUT_TEXT" 2>/dev/null)"
-    TRANSLATION="$(trans -e bing -b :en "$INPUT_TEXT" 2>/dev/null)"
+    TRANSLATION="$($GOOGLE_ENGINE_TOOL :en "$INPUT_TEXT" 2>/dev/null || \
+      $BING_ENGINE_TOOL :en "$INPUT_TEXT" 2>/dev/null || \
+      $YANDEX_ENGINE_TOOL :en "$INPUT_TEXT" 2>/dev/null)"
     TRANS_STATUS=$?
 else
     # *→ 中文
-    TRANSLATION="$(trans -e bing -b :zh "$INPUT_TEXT" 2>/dev/null)"
+    TRANSLATION="$($GOOGLE_ENGINE_TOOL :zh "$INPUT_TEXT" 2>/dev/null || \
+      $BING_ENGINE_TOOL :zh "$INPUT_TEXT" 2>/dev/null || \
+      $YANDEX_ENGINE_TOOL :zh "$INPUT_TEXT" 2>/dev/null)"
     TRANS_STATUS=$?
 fi
 # 如果上面trans翻译成功，那么将翻译结果赋值给wl-copy
