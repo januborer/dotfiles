@@ -91,15 +91,20 @@ if status is-login
     # If running in Wayland, set environment variables.
     if test -n "$WAYLAND_DISPLAY"
         # set -xg XDG_RUNTIME_DIR /var/run/user/$(id -u)
-        set -xg WLR_NO_HARDWARE_CURSORS 1
-        set -xg QT_QPA_PLATFORM wayland
-        set -xg QT_WAYLAND_DISABLE_WINDOWDECORATION 1
+        set -gx WLR_NO_HARDWARE_CURSORS 1
+        set -gx QT_QPA_PLATFORM wayland
+        set -gx QT_WAYLAND_DISABLE_WINDOWDECORATION 1
         # set -xg GDK_DPI_SCALE 0.5
 
-        set -xg SDL_IM_MODULE fcitx5
-        set -xg QT_IM_MODULE fcitx5
-        set -xg GTK_IM_MODULE fcitx5
-        set -xg BROWSER firefox
+        set -gx XMODIFIERS "@im=fcitx"
+        set -gx SDL_IM_MODULE fcitx
+        set -gx GLFW_IM_MODULE fcitx
+        set -gx SDL_IM_MODULE fcitx
+        # set -gx QT_IM_MODULE fcitx
+        # set -gx GTK_IM_MODULE fcitx
+        set -gx BROWSER firefox
+        set -e GTK_IM_MODULE
+        set -e QT_IM_MODULE
     end
 end
 #

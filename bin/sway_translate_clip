@@ -6,12 +6,13 @@ if ! command -v wl-paste > /dev/null || ! command -v trans > /dev/null || ! comm
     notify-send -u critical -t 5000 "翻译错误" "缺少依赖工具：wl-paste, translate-shell (trans) 或 notify-send。"
     exit 1
 fi
+export XMODIFIERS="@im=fcitx5"
 
 INPUT_TOOL="fuzzel"
 INPUT_TEXT=$(echo "" | "$INPUT_TOOL" --dmenu --lines=0 --width=40 --background=282a36ff --text=f8f8f2ff --border-width=2 --border-color=bd93f9ff --selection-text=8be9fdff)
 STATUS_INPUT=$?
 if [ "$STATUS_INPUT" -ne 0 ] || [ -z "$INPUT_TEXT" ]; then
-  notify-send -u critical -t 5000 "cancle"
+  # notify-send -u critical -t 5000 "cancle"
   exit 0
 fi
 

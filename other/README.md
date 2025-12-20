@@ -18,7 +18,7 @@ grim
 slurp
 rofi-wayland
 wl-clipboard
-yazi(file,nerd-fonts,7-zip,jq,poppler,fd,ripgrep,fzf,zoxide,resvg,ImageMagick,wl-clipboard)
+yazi(file,nerd-fonts,7-zip,jq,poppler-utils,fd,ripgrep,fzf,zoxide,resvg,ImageMagick,wl-clipboard,zathura,zathura-pdf-mupdf)
 bash(Used for tmux)
 wf-recorder
 thunderbird
