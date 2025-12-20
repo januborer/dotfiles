@@ -42,7 +42,7 @@ else
     TRANS_STATUS=$?
 fi
 
-if [ "$TRANS_STATUS" -eq 0 ] && [ "$1" != "word" ]; then
+if [ "$TRANS_STATUS" -eq 0 ] && [ "$1" != "y" ]; then
   echo "$TRANSLATION" | wl-copy
 fi
 

@@ -96,10 +96,10 @@ if status is-login
         set -xg QT_WAYLAND_DISABLE_WINDOWDECORATION 1
         # set -xg GDK_DPI_SCALE 0.5
 
-        set -gx SDL_IM_MODULE fcitx5
+        set -xg SDL_IM_MODULE fcitx5
         set -xg QT_IM_MODULE fcitx5
         set -xg GTK_IM_MODULE fcitx5
-        set -xg XMODIFIERS @im=fcitx5
+        set -xg BROWSER firefox
     end
 end
 #
