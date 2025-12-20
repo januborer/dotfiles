@@ -337,8 +337,7 @@ bindsym $mod+r mode "resize"
     # some of my binds
     # bindsym ctrl+g exec QT_QPA_PLATFORM=xcb goldendict
     # - 假设您的脚本名为 sway-translate-clip.sh 并且在 $PATH 中
-    bindsym ctrl+g exec --no-startup-id sway_translate_clip "word"
-    bindsym ctrl+shift+g exec --no-startup-id sway_translate_clip
+    bindsym ctrl+g exec --no-startup-id sway_translate_clip
     # bindsym ctrl+g WAYLAND_DISPLAY=x11 rustdesk
     # bindsym ctrl+g exec firefox https://ctext.org/zhs
 

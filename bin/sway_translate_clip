@@ -1,38 +1,26 @@
 #!/bin/sh
 
-# 检查依赖工具是否安装
+# 基于fuzzel和trans的翻译脚本：如果输入y那么就翻译wl-paste的内容，否则翻译输入内容
+
 if ! command -v wl-paste > /dev/null || ! command -v trans > /dev/null || ! command -v notify-send > /dev/null; then
     notify-send -u critical -t 5000 "翻译错误" "缺少依赖工具：wl-paste, translate-shell (trans) 或 notify-send。"
     exit 1
 fi
-if [ "$1" = "word" ]; then
-  NOTIFY_TOOL="notify-send -i info -t 5000"
-  # rofi
-  # INPUT_TOOL="rofi -dmenu -normal-window -i"
-  # INPUT_TEXT=$(echo "" | $INPUT_TOOL -p "Input" -format s)
-  # wofi
-  # INPUT_TOOL="wofi --dmenu --lines 0"
-  # INPUT_TEXT=$(echo "" | $INPUT_TOOL --prompt "Input" --width 400)
-  # fuzzel
-  INPUT_TOOL="fuzzel"
-  INPUT_TEXT=$(echo "" | "$INPUT_TOOL" --dmenu --lines=0 --width=40 --background=282a36ff --text=f8f8f2ff --border-width=2 --border-color=bd93f9ff --selection-text=8be9fdff)
-  # 捕获 rofi/wofi/fuzzel 的退出状态码
-  STATUS_INPUT=$?
-  if [ "$STATUS_INPUT" -ne 0 ] || [ -z "$INPUT_TEXT" ]; then
-    # notify-send "翻译取消" "用户未输入文本或取消操作。"
-    notify-send -u critical -t 5000 "cancle translate."
-    exit 0
-  fi
-else
+
+INPUT_TOOL="fuzzel"
+INPUT_TEXT=$(echo "" | "$INPUT_TOOL" --dmenu --lines=0 --width=40 --background=282a36ff --text=f8f8f2ff --border-width=2 --border-color=bd93f9ff --selection-text=8be9fdff)
+STATUS_INPUT=$?
+if [ "$STATUS_INPUT" -ne 0 ] || [ -z "$INPUT_TEXT" ]; then
+  notify-send -u critical -t 5000 "cancle"
+  exit 0
+fi
+
+if [ "$INPUT_TEXT" = "y" ]; then
   NOTIFY_TOOL="notify-send -i info -t 50000"
   INPUT_TEXT=$(wl-paste | sed -e 's/^[ \t\n]*//g' -e 's/[ \t\n]*$//g' -e 's/\n/ /g')
+else
+  NOTIFY_TOOL="notify-send -i info -t 5000"
 fi
-# 从 Wayland 剪贴板获取内容 (使用 -p 参数读取主选择区 Primary Selection)
-# 对于大多数“选中即复制”的操作，读取 Primary Selection (主选择区) 更加即时。
-# 您也可以尝试 -c 来读取 Clipboard Selection (剪贴板)，默认就是-c
-# INPUT_TEXT=$(wl-paste -n -p)
-# INPUT_TEXT=$(wl-paste -n)
-
 
 if [ -z "$INPUT_TEXT" ]; then
     notify-send -i info -t 5000 "翻译提示" "未检测到文本内容。"
@@ -42,32 +30,20 @@ fi
 GOOGLE_ENGINE_TOOL="trans -e google -brief"
 BING_ENGINE_TOOL="trans -e bing -brief"
 YANDEX_ENGINE_TOOL="trans -e yandex -brief"
-# 限制输入文本长度，避免通知内容过长 (例如只取前10个字符用于通知标题)
-# PREVIEW=$(echo "$INPUT_TEXT" | head -c 10)
-#
-#判断是否为中文
-# -e 指定翻译引擎，auto是google，可以使用trans -list-engines查看有哪些engines
-# if echo "$INPUT_TEXT" | grep -q '[\xe4-\xe9]' ; then
 if echo "$INPUT_TEXT" | pcre2grep -q  '\p{Han}'; then
-    # 中文 → 英文
-    # TRANSLATION="$(trans -b -sp :en "$INPUT_TEXT" 2>/dev/null)"
     TRANSLATION="$($GOOGLE_ENGINE_TOOL :en "$INPUT_TEXT" 2>/dev/null || \
       $BING_ENGINE_TOOL :en "$INPUT_TEXT" 2>/dev/null || \
       $YANDEX_ENGINE_TOOL :en "$INPUT_TEXT" 2>/dev/null)"
     TRANS_STATUS=$?
 else
-    # *→ 中文
     TRANSLATION="$($GOOGLE_ENGINE_TOOL :zh "$INPUT_TEXT" 2>/dev/null || \
       $BING_ENGINE_TOOL :zh "$INPUT_TEXT" 2>/dev/null || \
       $YANDEX_ENGINE_TOOL :zh "$INPUT_TEXT" 2>/dev/null)"
     TRANS_STATUS=$?
 fi
-# 如果上面trans翻译成功，那么将翻译结果赋值给wl-copy
+
 if [ "$TRANS_STATUS" -eq 0 ] && [ "$1" != "word" ]; then
   echo "$TRANSLATION" | wl-copy
 fi
-# 使用 notify-send 显示结果
-# -i info: 使用信息图标
-# -t 20000: 停留 20000 毫秒 (20秒)
-# notify-send -i info -t 20000 "原文: $PREVIEW..." "$TRANSLATION"
+
 $NOTIFY_TOOL "Origin: $INPUT_TEXT" ">>>: $TRANSLATION"

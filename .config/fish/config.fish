@@ -87,20 +87,21 @@ set -x PATH \
 #     alias sudo 'sudo -E'
 # end
 #
-# if status is-login
-#     # If running in Wayland, set environment variables.
-#     if test -n "$WAYLAND_DISPLAY"
-#         set -xg XDG_RUNTIME_DIR /var/run/user/$(id -u)
-#         set -xg WLR_NO_HARDWARE_CURSORS 1
-#         set -xg QT_QPA_PLATFORM wayland
-#         set -xg QT_WAYLAND_DISABLE_WINDOWDECORATION 1
-#         set -xg GDK_DPI_SCALE 0.5
-#
-#         set -xg QT_IM_MODULE fcitx
-#         set -xg GTK_IM_MODULE fcitx/xim
-#         set -xg XMODIFIERS @im=fcitx
-#     end
-# end
+if status is-login
+    # If running in Wayland, set environment variables.
+    if test -n "$WAYLAND_DISPLAY"
+        # set -xg XDG_RUNTIME_DIR /var/run/user/$(id -u)
+        set -xg WLR_NO_HARDWARE_CURSORS 1
+        set -xg QT_QPA_PLATFORM wayland
+        set -xg QT_WAYLAND_DISABLE_WINDOWDECORATION 1
+        # set -xg GDK_DPI_SCALE 0.5
+
+        set -gx SDL_IM_MODULE fcitx5
+        set -xg QT_IM_MODULE fcitx5
+        set -xg GTK_IM_MODULE fcitx5
+        set -xg XMODIFIERS @im=fcitx5
+    end
+end
 #
 # fish_config prompt choose informative_vcs
 #
@@ -158,7 +159,7 @@ if status is-interactive
   # fi
 end
 
-if status is-login
+# if status is-login
   # Commands to run in login sessions can go here
 
   ##############WM################
@@ -171,7 +172,7 @@ if status is-login
     #exit 0
     #end
 
-end
+# end
 
 
 ###########FUNCTIONS##########
