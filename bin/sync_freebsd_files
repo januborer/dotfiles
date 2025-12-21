@@ -1,0 +1,51 @@
+#!/usr/bin/env sh
+# 定义源文件路径（假设在你的 dotfiles 文件夹内）
+# DOTFILES_DIR="$(pwd)"
+DOTFILES_DIR=$(dirname "$(realpath "$0")")
+echo "$DOTFILES_DIR"
+
+SRC_LOADER="$DOTFILES_DIR/../.config/freebsd/loader.conf"
+SRC_RC="$DOTFILES_DIR/../.config/freebsd/rc.conf"
+echo "$SRC_LOADER"
+
+# 定义目标路径
+DEST_LOADER="/boot/loader.conf"
+DEST_RC="/etc/rc.conf"
+
+# 检查是否以 root 权限运行
+if [ "$(id -u)" -ne 0 ]; then
+    echo "请使用 sudo 运行此脚本！"
+    exit 1
+fi
+
+echo "开始部署系统配置文件..."
+
+# 部署 loader.conf
+# 使用 install 命令可以同时设置所有者、权限并进行备份 (.bak)
+if [ -f "$SRC_LOADER" ]; then
+    echo "正在同步 $DEST_LOADER..."
+    install -v -m 644 -o root -g wheel -B .bak "$SRC_LOADER" "$DEST_LOADER"
+else
+    echo "警告: 未找到源文件 $SRC_LOADER"
+    exit 1
+fi
+
+# 部署 rc.conf
+if [ -f "$SRC_RC" ]; then
+    echo "正在同步 $DEST_RC..."
+    install -v -m 644 -o root -g wheel -B .bak "$SRC_RC" "$DEST_RC"
+else
+    echo "警告: 未找到源文件 $SRC_RC"
+    exit 1
+fi
+
+# (可选) 验证 rc.conf 语法
+# 运行这个命令可以检查 rc.conf 是否有基本的语法错误
+service -e > /dev/null 2>&1
+if [ $? -eq 0 ]; then
+    echo "部署完成，语法检查通过。"
+else
+    echo "错误: 部署后的 rc.conf 存在语法问题，请检查！"
+fi
+
+echo "所有操作已完成。建议重启以应用 loader.conf 的更改。"

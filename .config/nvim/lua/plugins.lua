@@ -12,7 +12,6 @@ return {
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 
   -- 'mg979/vim-visual-multi',
-  -- "lambdalisue/suda.vim",
   -- 'terrastruct/d2-vim',
   -- 'google/vim-jsonnet',
   -- 'will133/vim-dirdiff',

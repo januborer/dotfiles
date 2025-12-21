@@ -26,7 +26,7 @@ map("i", "<C-d>d", "<ESC>^v$yo<C-r>0", { noremap = true, silent = true })
 
 -- normal
 map("n", "<leader>w", ":wa<CR>", { noremap = true, silent = true })
-map("n", "<leader>W", ":wa sudo://%<CR>", { noremap = true, silent = true })
+-- map("n", "<leader>W", ":wa sudo://%<CR>", { noremap = true, silent = true })
 map("n", "<C-h>", "<C-w>h", { noremap = true, silent = true })
 map("n", "<C-j>", "<C-w>j", { noremap = true, silent = true })
 map("n", "<C-k>", "<C-w>k", { noremap = true, silent = true })
