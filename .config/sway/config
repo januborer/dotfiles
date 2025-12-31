@@ -6,7 +6,7 @@
 
 ### Variables
 #
-input * xkb_rules evdev
+# input * xkb_rules evdev
 #exec --no-startup-id fcitx5 -r
 #exec fcitx5 -d
 exec "fcitx5 -d"

@@ -26,6 +26,9 @@ zathura(pdf reader operate like vim,support mult file format)
 mako(sway notify daemon),libnotify(use it's notify-send for translate-shell),gawk(use for trans),pcre2grep(used for sway_translate_clip),fuzzel(instend of rofi/wofi/dmenu get input text)
 <!-- gnome-dictionary(install dictd and config it in /etc/rc.conf (dict_enable="YES")) -->
 
+**Cargo Install**
+bacon
+
 ## Install
 
 sudo chmod +x ./install.sh

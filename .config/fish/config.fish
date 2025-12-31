@@ -96,15 +96,18 @@ if status is-login
         set -gx QT_WAYLAND_DISABLE_WINDOWDECORATION 1
         # set -xg GDK_DPI_SCALE 0.5
 
-        set -gx XMODIFIERS "@im=fcitx"
-        set -gx SDL_IM_MODULE fcitx
-        set -gx GLFW_IM_MODULE fcitx
-        set -gx SDL_IM_MODULE fcitx
-        # set -gx QT_IM_MODULE fcitx
-        # set -gx GTK_IM_MODULE fcitx
+        set -gx XMODIFIERS "@im=fcitx5"
+        set -gx SDL_IM_MODULE fcitx5
+        set -gx GLFW_IM_MODULE fcitx5
+        set -gx SDL_IM_MODULE fcitx5
+        set -gx QT_IM_MODULE fcitx5
+        set -gx GTK_IM_MODULE fcitx5
         set -gx BROWSER firefox
-        set -e GTK_IM_MODULE
-        set -e QT_IM_MODULE
+
+        # 强制使用 GLES2 渲染器（兼容性更好）
+        set -gx WLR_RENDERER gles2
+        # 解决部分显卡光标不显示或崩溃
+        set -gx WLR_NO_HARDWARE_CURSORS 1
     end
 end
 #
@@ -223,7 +226,7 @@ function check_hotspot
   end
 end
 function proxy_off
-  set -e http_proxy https_proxy HTTP_PROXY HTTPS_PROXY NO_PROXY no_proxy
+  set -e http_proxy https_proxy HTTP_PROXY HTTPS_PROXY NO_PROXY no_proxy ALL_PROXY all_proxy
   #git config --global --unset http.proxy
   #git config --global --unset https.proxy
   echo -e "\nProxy off"

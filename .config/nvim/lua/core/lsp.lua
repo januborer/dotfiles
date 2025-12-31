@@ -48,5 +48,15 @@ vim.api.nvim_create_autocmd("LspAttach", {
         end,
       })
     end
+    local opts = { buffer = args.buf }
+
+    -- 核心：将 gd 绑定到 LSP 的跳转定义函数
+    -- vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+
+    -- 其他常用的 LSP 快捷键绑定
+    -- vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+    -- vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+    -- vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+    -- vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
   end,
 })
