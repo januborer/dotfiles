@@ -385,7 +385,8 @@ bindsym $mod+r mode "resize"
     # for_window [class="netease-cloud-music"] floating enable
 #    for_window [class="tanpopo"] floating enable
     # for_window [title="Firefox - Sharing Indicator"] floating enable
-
+# 让 imv 自动以浮动模式打开，并居中
+for_window [app_id="imv"] floating enable, move position center
 # Xwayland enable
 xwayland enable
 # -----------------------------------------------

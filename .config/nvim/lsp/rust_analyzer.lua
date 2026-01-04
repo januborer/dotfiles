@@ -129,9 +129,9 @@ return {
         run = { enable = true },
         updateTest = { enable = true },
       },
-      checkOnSave = {
-        command = "clippy",
-      },
+      -- checkOnSave = {
+      --   command = "clippy",
+      -- },
       cargo = {
         allFeatures = true,
       },

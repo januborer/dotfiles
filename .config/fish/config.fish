@@ -184,7 +184,7 @@ end
 
 
 ###########FUNCTIONS##########
-set PROXY_IP "192.168.2.14"
+set PROXY_IP "192.168.68.236"
 #set PROXY_IP "192.168.68.236"
 #set PROXY_IP "10.47.182.136"
 set PROXY_SOCKS_PORT "1080"

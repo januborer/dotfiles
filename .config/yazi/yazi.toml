@@ -37,6 +37,7 @@ edit = [
 reader = [
   { run = 'zathura "$@"', desc = "Zathura", block = false, for = "unix" },
 ]
+imageview = [{ run = 'imv "$@"', detach = true, for = "unix" }]
 open = [
   { run = 'xdg-open "$1"', desc = "Open", for = "linux" },
   { run = 'open "$@"', desc = "Open", for = "macos" },
@@ -102,7 +103,7 @@ rules = [
   ] },
   # Image
   { mime = "image/*", use = [
-    "open",
+    "imageview",
     "reveal",
   ] },
   # Media

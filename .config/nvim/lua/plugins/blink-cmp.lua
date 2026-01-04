@@ -42,6 +42,11 @@ return {
     sources = {
       -- default = { 'lsp', 'path', 'snippets', 'buffer', "omni", 'codecompanion' },
       default = { 'lsp', 'path', 'snippets', 'buffer' },
+      providers = {
+        lsp = {
+          timeout_ms = 1000, -- 给 LSP 源更长的独立宽限时间
+        },
+      },
     },
   },
   opts_extend = { "sources.default" }
